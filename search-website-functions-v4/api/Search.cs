@@ -56,8 +56,6 @@ namespace WebSearch.Function
 //                QueryCaption = QueryCaptionType.Extractive,
 //                QueryCaptionHighlightEnabled = true
             };
-            options.Facets.Add("authors");
-            options.Facets.Add("language_code");
 
             SearchResults<SearchDocument> searchResults = searchClient.Search<SearchDocument>(data.SearchText, options);
 
