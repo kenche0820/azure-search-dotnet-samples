@@ -62,6 +62,11 @@ namespace WebSearch.Models
         [JsonPropertyName("document")]
         public SearchDocument Document { get; set; }
     }
+    public class SharepointModel
+    {
+        public string content { get; set; }
+    }
+
     public class BookModel
     {
         public string id { get; set; }
