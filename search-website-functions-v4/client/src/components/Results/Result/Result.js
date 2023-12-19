@@ -8,12 +8,11 @@ export default function Result(props) {
     
     return(
     <div className="card result">
-        <a href={`/details/${props.document.id}`}>
-          
+                 
             <div className="card-body">
-                <h6 className="title-style">{props.document.content}</h6>
+                {props.document.content}
             </div>
-        </a>
+        
     </div>
     );
 }
