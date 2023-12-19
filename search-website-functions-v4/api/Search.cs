@@ -51,7 +51,7 @@ namespace WebSearch.Function
                 Size = data.Size,
                 Skip = data.Skip,
                 IncludeTotalCount = true,
-                Filter = CreateFilterExpression(data.Filters)
+                
 //                QueryType = Azure.Search.Documents.Models.SearchQueryType.Semantic,
 //                QueryLanguage = QueryLanguage.EnUs,
 //                SemanticConfigurationName = "ken-semantic-config",
@@ -61,21 +61,11 @@ namespace WebSearch.Function
 
             SearchResults<SearchDocument> searchResults = searchClient.Search<SearchDocument>(data.SearchText, options);
 
-            var facetOutput = new Dictionary<string, IList<FacetValue>>();
-            foreach (var facetResult in searchResults.Facets)
-            {
-                facetOutput[facetResult.Key] = facetResult.Value
-                           .Select(x => new FacetValue { value = x.Value.ToString(), count = x.Count })
-
-                           .ToList();
-            }
-
             // Data to return 
             var output = new SearchOutput
             {
                 Count = searchResults.TotalCount,
                 Results = searchResults.GetResults().ToList(),
-                Facets = facetOutput
             };
             
             var response = req.CreateResponse(HttpStatusCode.Found);
@@ -96,24 +86,6 @@ namespace WebSearch.Function
             }
 
             List<string> filterExpressions = new();
-
-
-            List<SearchFilter> authorFilters = filters.Where(f => f.field == "authors").ToList();
-            List<SearchFilter> languageFilters = filters.Where(f => f.field == "language_code").ToList();
-
-            List<string> authorFilterValues = authorFilters.Select(f => f.value).ToList();
-
-            if (authorFilterValues.Count > 0)
-            {
-                string filterStr = string.Join(",", authorFilterValues);
-                filterExpressions.Add($"{"authors"}/any(t: search.in(t, '{filterStr}', ','))");
-            }
-
-            List<string> languageFilterValues = languageFilters.Select(f => f.value).ToList();
-            foreach (var value in languageFilterValues)
-            {
-                filterExpressions.Add($"language_code eq '{value}'");
-            }
 
             return string.Join(" and ", filterExpressions);
         }
