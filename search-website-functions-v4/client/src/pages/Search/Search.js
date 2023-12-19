@@ -41,6 +41,7 @@ export default function Search() {
       .then(response => {
             console.log(JSON.stringify(response.data))
             setResults(response.data.results);
+            setFacets(response.data.facets);
             setResultCount(response.data.count);
             setIsLoading(false);
         } )
@@ -89,7 +90,7 @@ export default function Search() {
           <div className="search-bar">
             <SearchBar postSearchHandler={postSearchHandler} q={q}></SearchBar>
           </div>
-          
+          <Facets facets={facets} filters={filters} setFilters={setFilters}></Facets>
         </div>
         {body}
       </div>
