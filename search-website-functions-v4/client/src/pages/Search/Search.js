@@ -39,8 +39,6 @@ export default function Search() {
 
     console.log("Kenneth checks variable body")
     console.log(body)
-    console.log("Kenneth checks variable results")
-    console.log(results)
 
     axios.post( '/api/search', body)
       .then(response => {
