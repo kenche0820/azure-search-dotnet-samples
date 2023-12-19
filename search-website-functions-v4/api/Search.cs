@@ -50,6 +50,11 @@ namespace WebSearch.Function
                 Skip = data.Skip,
                 IncludeTotalCount = true,
                 Filter = CreateFilterExpression(data.Filters)
+                QueryType = Azure.Search.Documents.Models.SearchQueryType.Semantic,
+                QueryLanguage = QueryLanguage.EnUs,
+                SemanticConfigurationName = "ken-semantic-config",
+                QueryCaption = QueryCaptionType.Extractive,
+                QueryCaptionHighlightEnabled = true
             };
             options.Facets.Add("authors");
             options.Facets.Add("language_code");
