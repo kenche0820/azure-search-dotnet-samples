@@ -17,7 +17,6 @@ namespace WebSearch.Function
     {
         private static string searchApiKey = Environment.GetEnvironmentVariable("SearchApiKey", EnvironmentVariableTarget.Process);
         private static string searchServiceName = Environment.GetEnvironmentVariable("SearchServiceName", EnvironmentVariableTarget.Process);
-//        private static string searchIndexName = Environment.GetEnvironmentVariable("SearchIndexName", EnvironmentVariableTarget.Process) ?? "good-books";
         private static string searchIndexName = Environment.GetEnvironmentVariable("SearchIndexName", EnvironmentVariableTarget.Process) ?? "sharepoint-index";
 
         private readonly ILogger<Lookup> _logger;
@@ -44,88 +43,24 @@ namespace WebSearch.Function
                 new AzureKeyCredential(searchApiKey)
             );
 
-
-            Console.WriteLine("Query #3: Invoke semantic search on the same query. This time Triple Landscape is first.\n");
-    
-//          options = new SearchOptions()
-/*
             SearchOptions options = new()
-            {
-                QueryType = Azure.Search.Documents.Models.SearchQueryType.Semantic,
-                QueryLanguage = QueryLanguage.EnUs,
-                SemanticConfigurationName = "ken-semantic-config",
-                QueryCaption = QueryCaptionType.Extractive,
-                QueryCaptionHighlightEnabled = true
-            };
-*/
 
- //           options.Select.Add("content");
- //           response = srchclient.Search<Hotel>("what hotel has a good restaurant on site", options);
- //           WriteDocuments(response);
-
-
-/*
-SearchResults response = await searchClient.SearchAsync(
-    data.SearchText,
-    new SearchOptions
-    {
-        SemanticSearch = new()
-        {
-            SemanticConfigurationName = "ken-semantic-config",
-            QueryCaption = new(QueryCaptionType.Extractive),
-            QueryAnswer = new(QueryAnswerType.Extractive)
-        },
-        QueryType = SearchQueryType.Semantic
-    });
-*/
-/*
-int count = 0;
-Console.WriteLine($"Semantic Search Results:");
-
-Console.WriteLine($"\nQuery Answer:");
-foreach (QueryAnswerResult result in response.SemanticSearch.Answers)
-{
-    Console.WriteLine($"Answer Highlights: {result.Highlights}");
-    Console.WriteLine($"Answer Text: {result.Text}");
-}
-
-await foreach (SearchResult<Hotel> result in response.GetResultsAsync())
-{
-    count++;
-    Hotel doc = result.Document;
- 
-    if (result.SemanticSearch.Captions != null)
-    {
-        var caption = result.SemanticSearch.Captions.FirstOrDefault();
-        if (caption.Highlights != null && caption.Highlights != "")
-        {
-            Console.WriteLine($"Caption Highlights: {caption.Highlights}");
-        }
-        else
-        {
-            Console.WriteLine($"Caption Text: {caption.Text}");
-        }
-    }
-}
-Console.WriteLine($"Total number of search results:{count}");            
-*/
-
-
-
-  
- /*           SearchOptions options = new()
             {
                 Size = data.Size,
                 Skip = data.Skip,
                 IncludeTotalCount = true,
- //               Filter = CreateFilterExpression(data.Filters)
+                Filter = CreateFilterExpression(data.Filters)
+//                QueryType = Azure.Search.Documents.Models.SearchQueryType.Semantic,
+//                QueryLanguage = QueryLanguage.EnUs,
+//                SemanticConfigurationName = "ken-semantic-config",
+//                QueryCaption = QueryCaptionType.Extractive,
+//                QueryCaptionHighlightEnabled = true
             };
- //           options.Facets.Add("authors");
- //           options.Facets.Add("language_code");
-*/
-//            SearchResults<SearchDocument> searchResults = searchClient.Search<SearchDocument>(data.SearchText, options);
+            options.Facets.Add("authors");
+            options.Facets.Add("language_code");
 
-/*
+            SearchResults<SearchDocument> searchResults = searchClient.Search<SearchDocument>(data.SearchText, options);
+
             var facetOutput = new Dictionary<string, IList<FacetValue>>();
             foreach (var facetResult in searchResults.Facets)
             {
@@ -134,24 +69,22 @@ Console.WriteLine($"Total number of search results:{count}");
 
                            .ToList();
             }
-*/
- /*
+
             // Data to return 
             var output = new SearchOutput
             {
                 Count = searchResults.TotalCount,
                 Results = searchResults.GetResults().ToList(),
- //               Facets = facetOutput
+                Facets = facetOutput
             };
-*/
             
             var response = req.CreateResponse(HttpStatusCode.Found);
-/*
+
             // Serialize data
             var serializer = new JsonObjectSerializer(
                 new JsonSerializerOptions(JsonSerializerDefaults.Web));
             await response.WriteAsJsonAsync(output, serializer);
-*/
+
             return response;
         }
 
