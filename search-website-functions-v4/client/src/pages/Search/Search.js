@@ -37,6 +37,9 @@ export default function Search() {
       filters: filters
     };
 
+    console.log("Kenneth checks variable body")
+    console.log(body)
+
     axios.post( '/api/search', body)
       .then(response => {
             console.log(JSON.stringify(response.data))
