@@ -52,13 +52,13 @@ namespace WebSearch.Function
             FieldBuilder fieldBuilder = new FieldBuilder();
     
             var searchFields = fieldBuilder.Build(typeof(Hotel));
-            /*
+            
 
             var definition = new SearchIndex(searchIndexName, searchFields);
 
             var suggester = new SearchSuggester("sg", new[] { "id", "content" });
             definition.Suggesters.Add(suggester);       
-
+/*
             SemanticSettings semanticSettings = new SemanticSettings();
             semanticSettings.Configurations.Add(new SemanticConfiguration
                 (
