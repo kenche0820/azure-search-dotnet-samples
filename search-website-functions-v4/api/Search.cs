@@ -45,7 +45,8 @@ namespace WebSearch.Function
                 new AzureKeyCredential(searchApiKey)
             );
 
-            SearchOptions options = new()
+            
+            SearchOptions options = new SearchOptions()
             {
                 Size = data.Size,
                 Skip = data.Skip,
@@ -53,7 +54,7 @@ namespace WebSearch.Function
                 
 //                QueryType = Azure.Search.Documents.Models.SearchQueryType.Semantic,
 //                QueryLanguage = QueryLanguage.EnUs,
-//                SemanticConfigurationName = "ken-semantic-config",
+//                SemanticConfigurationName = "my-semantic-config",
 //                QueryCaption = QueryCaptionType.Extractive,
 //                QueryCaptionHighlightEnabled = true
             };
