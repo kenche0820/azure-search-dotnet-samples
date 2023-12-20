@@ -61,9 +61,9 @@ namespace WebSearch.Function
             var suggester = new SearchSuggester("sg", new[] { "id", "content" });
             definition.Suggesters.Add(suggester);       
             
-            public Azure.Search.Documents.Indexes.Models.SemanticSettings SemanticSettings { get; set; }
-/*            SemanticSettings semanticSettings = new SemanticSettings();
             
+            SemanticSettings semanticSettings = new Azure.Search.Documents.Indexes.Models.SemanticSettings();
+/*            
             semanticSettings.Configurations.Add(new SemanticConfiguration
                 (
                     
