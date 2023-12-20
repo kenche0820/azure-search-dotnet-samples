@@ -46,6 +46,23 @@ namespace WebSearch.Function
             );
 
             
+            SemanticSettings semanticSettings = new SemanticSettings();
+            semanticSettings.Configurations.Add(new SemanticConfiguration
+                (
+                    "my-semantic-config",
+                    new PrioritizedFields()
+                    {
+                        TitleField = new SemanticField { FieldName = "id" },
+                        ContentFields = {
+                        new SemanticField { FieldName = "content" },
+                                                },
+                        KeywordFields = {
+                        new SemanticField { FieldName = "content" },
+                        }
+                    })
+                );
+
+
             SearchOptions options = new SearchOptions()
             {
                 Size = data.Size,
@@ -54,7 +71,7 @@ namespace WebSearch.Function
                 
                 QueryType = Azure.Search.Documents.Models.SearchQueryType.Semantic,
                 QueryLanguage = QueryLanguage.EnUs,
-//                SemanticConfigurationName = "my-semantic-config",
+                SemanticConfigurationName = "my-semantic-config",
                 QueryCaption = QueryCaptionType.Extractive,
                 QueryCaptionHighlightEnabled = true
             };
