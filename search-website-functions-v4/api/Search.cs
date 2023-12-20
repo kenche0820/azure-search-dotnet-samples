@@ -45,7 +45,14 @@ namespace WebSearch.Function
                 new AzureKeyCredential(searchApiKey)
             );
 
-            
+            FieldBuilder fieldBuilder = new FieldBuilder();
+            var searchFields = fieldBuilder.Build(typeof(Doc));
+
+            var definition = new SearchIndex(searchIndexName, searchFields);
+
+            var suggester = new SearchSuggester("sg", new[] { "id", "content" });
+            definition.Suggesters.Add(suggester);       
+
             SemanticSettings semanticSettings = new SemanticSettings();
             semanticSettings.Configurations.Add(new SemanticConfiguration
                 (
@@ -61,6 +68,8 @@ namespace WebSearch.Function
                         }
                     })
                 );
+
+            definition.SemanticSettings = semanticSettings;
 
 
             SearchOptions options = new SearchOptions()
