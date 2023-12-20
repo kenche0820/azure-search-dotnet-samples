@@ -39,7 +39,7 @@ namespace SemanticSearch.Quickstart
             Console.WriteLine("{0}", "Uploading documents...\n");
             UploadDocuments(ingesterClient);
 
-            // Wait 2 secondsfor indexing to complete before starting queries (for demo and console-app purposes only)
+            // Wait 2 seconds for indexing to complete before starting queries (for demo and console-app purposes only)
             Console.WriteLine("Waiting for indexing...\n");
             System.Threading.Thread.Sleep(2000);
 
