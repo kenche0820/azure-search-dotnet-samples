@@ -11,6 +11,10 @@ using System.Text.Json.Serialization;
 using WebSearch.Models;
 using SearchFilter = WebSearch.Models.SearchFilter;
 
+using System;
+using Azure.Search.Documents.Indexes;
+using Azure.Search.Documents.Indexes.Models;
+
 namespace WebSearch.Function
 {
     public class Search
@@ -46,7 +50,7 @@ namespace WebSearch.Function
             );
 
             FieldBuilder fieldBuilder = new FieldBuilder();
-            var searchFields = fieldBuilder.Build(typeof(Doc));
+            var searchFields = fieldBuilder.Build(typeof(Hotel));
 
             var definition = new SearchIndex(searchIndexName, searchFields);
 
