@@ -77,8 +77,9 @@ namespace WebSearch.Function
                     })
                     
                 );
-*/
+
             definition.SemanticSettings = semanticSettings;
+*/
 
 
             SearchOptions options = new SearchOptions()
