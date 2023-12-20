@@ -62,6 +62,7 @@ namespace WebSearch.Function
             SemanticSettings semanticSettings = new SemanticSettings();
             semanticSettings.Configurations.Add(new SemanticConfiguration
                 (
+                    /*
                     "my-semantic-config",
                     new PrioritizedFields()
                     {
@@ -73,6 +74,7 @@ namespace WebSearch.Function
                         new SemanticField { FieldName = "content" },
                         }
                     })
+                    */
                 );
 
             definition.SemanticSettings = semanticSettings;
