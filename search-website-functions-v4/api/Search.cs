@@ -17,6 +17,8 @@ using SearchFilter = WebSearch.Models.SearchFilter;
 
 namespace WebSearch.Function
 {
+
+    
     public class Search
     {
         private static string searchApiKey = Environment.GetEnvironmentVariable("SearchApiKey", EnvironmentVariableTarget.Process);
@@ -58,9 +60,10 @@ namespace WebSearch.Function
 
             var suggester = new SearchSuggester("sg", new[] { "id", "content" });
             definition.Suggesters.Add(suggester);       
-
-            SemanticSettings semanticSettings = new SemanticSettings();
-/*            
+            
+            public Azure.Search.Documents.Indexes.Models.SemanticSettings SemanticSettings { get; set; }
+/*            SemanticSettings semanticSettings = new SemanticSettings();
+            
             semanticSettings.Configurations.Add(new SemanticConfiguration
                 (
                     
