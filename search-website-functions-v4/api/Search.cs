@@ -48,8 +48,9 @@ namespace WebSearch.Function
                 searchIndexName,
                 new AzureKeyCredential(searchApiKey)
             );
-/*
+
             FieldBuilder fieldBuilder = new FieldBuilder();
+    /*
             var searchFields = fieldBuilder.Build(typeof(Hotel));
 
             var definition = new SearchIndex(searchIndexName, searchFields);
