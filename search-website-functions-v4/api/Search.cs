@@ -48,7 +48,7 @@ namespace WebSearch.Function
                 searchIndexName,
                 new AzureKeyCredential(searchApiKey)
             );
-
+/*
             FieldBuilder fieldBuilder = new FieldBuilder();
             var searchFields = fieldBuilder.Build(typeof(Hotel));
 
@@ -74,19 +74,20 @@ namespace WebSearch.Function
                 );
 
             definition.SemanticSettings = semanticSettings;
-
+*/
 
             SearchOptions options = new SearchOptions()
             {
                 Size = data.Size,
                 Skip = data.Skip,
                 IncludeTotalCount = true,
-                
+   /*             
                 QueryType = Azure.Search.Documents.Models.SearchQueryType.Semantic,
                 QueryLanguage = QueryLanguage.EnUs,
                 SemanticConfigurationName = "my-semantic-config",
                 QueryCaption = QueryCaptionType.Extractive,
                 QueryCaptionHighlightEnabled = true
+    */
             };
 
             SearchResults<SearchDocument> searchResults = searchClient.Search<SearchDocument>(data.SearchText, options);
