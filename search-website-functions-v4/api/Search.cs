@@ -45,8 +45,7 @@ namespace WebSearch.Function
                 new AzureKeyCredential(searchApiKey)
             );
 
-            SearchOptions options = new()
-
+           options = new SearchOptions()
             {
                 Size = data.Size,
                 Skip = data.Skip,
