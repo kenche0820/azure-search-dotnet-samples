@@ -1,6 +1,9 @@
+using System;
 using Azure;
 using Azure.Core.Serialization;
 using Azure.Search.Documents;
+using Azure.Search.Documents.Indexes;
+using Azure.Search.Documents.Indexes.Models;
 using Azure.Search.Documents.Models;
 using Microsoft.Azure.Functions.Worker;
 using Microsoft.Azure.Functions.Worker.Http;
@@ -11,9 +14,6 @@ using System.Text.Json.Serialization;
 using WebSearch.Models;
 using SearchFilter = WebSearch.Models.SearchFilter;
 
-using System;
-using Azure.Search.Documents.Indexes;
-using Azure.Search.Documents.Indexes.Models;
 
 namespace WebSearch.Function
 {
@@ -58,9 +58,9 @@ namespace WebSearch.Function
 
             var suggester = new SearchSuggester("sg", new[] { "id", "content" });
             definition.Suggesters.Add(suggester);       
-/*
+
             SemanticSettings semanticSettings = new SemanticSettings();
-            
+/*            
             semanticSettings.Configurations.Add(new SemanticConfiguration
                 (
                     
