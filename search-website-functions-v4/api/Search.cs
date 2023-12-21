@@ -89,8 +89,9 @@ namespace WebSearch.Function
                 Size = data.Size,
                 Skip = data.Skip,
                 IncludeTotalCount = true,
-   /*             
+                
                 QueryType = Azure.Search.Documents.Models.SearchQueryType.Semantic,
+/*                
                 QueryLanguage = QueryLanguage.EnUs,
                 SemanticConfigurationName = "my-semantic-config",
                 QueryCaption = QueryCaptionType.Extractive,
