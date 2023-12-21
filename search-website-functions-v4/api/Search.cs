@@ -62,7 +62,8 @@ namespace WebSearch.Function
             definition.Suggesters.Add(suggester);       
             
             
-            SemanticSettings semanticSettings = new Azure.Search.Documents.Indexes.Models.SemanticSettings();
+            semanticSettings = new SemanticSettings();
+//            SemanticSettings semanticSettings = new SemanticSettings();
 /*            
             semanticSettings.Configurations.Add(new SemanticConfiguration
                 (
