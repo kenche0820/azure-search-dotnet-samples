@@ -108,7 +108,24 @@ namespace WebSearch.Function
         QueryType = SearchQueryType.Semantic
   */  
 
-            SearchResults<SearchDocument> searchResults = searchClient.Search<SearchDocument>(data.SearchText, options);
+//            SearchResults<SearchDocument> searchResults = searchClient.Search<SearchDocument>(data.SearchText, options);
+
+
+            SearchResults<Hotel> response = await searchClient.SearchAsync<Hotel>(
+                data.SearchText,
+                new SearchOptions
+                {
+                    SemanticSearch = new()
+                    {
+                        SemanticConfigurationName = "ken-semantic-config",
+                        QueryCaption = new(QueryCaptionType.Extractive),
+                        QueryAnswer = new(QueryAnswerType.Extractive)
+                    },
+                    QueryType = SearchQueryType.Semantic
+                });
+
+
+
 
             // Data to return 
             var output = new SearchOutput
