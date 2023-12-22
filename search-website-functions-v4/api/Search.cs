@@ -100,9 +100,9 @@ namespace WebSearch.Function
 
 
 
-//            SearchResults<SearchDocument> searchResults = searchClient.Search<SearchDocument>(data.SearchText, options);
+            SearchResults<SearchDocument> searchResults = searchClient.Search<SearchDocument>(data.SearchText, options);
 
-
+/*
             SearchResults<SearchDocument> response = await searchClient.SearchAsync<SearchDocument>(
                 data.SearchText,
                 new SearchOptions
@@ -115,7 +115,7 @@ namespace WebSearch.Function
                     },
                     QueryType = SearchQueryType.Semantic
                 });
-
+*/
 
 
 
