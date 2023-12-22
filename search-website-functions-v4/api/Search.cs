@@ -98,7 +98,7 @@ namespace WebSearch.Function
 */                
             };
 
-                
+ /*               
         SemanticSearch = new()
         {
             SemanticConfigurationName = "ken-semantic-config",
@@ -106,7 +106,7 @@ namespace WebSearch.Function
             QueryAnswer = new(QueryAnswerType.Extractive)
         },
         QueryType = SearchQueryType.Semantic
-    
+  */  
 
             SearchResults<SearchDocument> searchResults = searchClient.Search<SearchDocument>(data.SearchText, options);
 
