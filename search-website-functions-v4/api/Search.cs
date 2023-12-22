@@ -83,21 +83,30 @@ namespace WebSearch.Function
             definition.SemanticSettings = semanticSettings;
 */
 
-
             SearchOptions options = new SearchOptions()
             {
                 Size = data.Size,
                 Skip = data.Skip,
                 IncludeTotalCount = true,
 
-                
+  /*              
                 QueryType = Azure.Search.Documents.Models.SearchQueryType.Semantic,                
                 QueryLanguage = QueryLanguage.EnUs,
                 SemanticConfigurationName = "ken-semantic-config",
                 QueryCaption = QueryCaptionType.Extractive,
-                QueryCaptionHighlightEnabled = true
-    
+                QueryCaptionHighlightEnabled = true    
+*/                
             };
+
+                
+        SemanticSearch = new()
+        {
+            SemanticConfigurationName = "ken-semantic-config",
+            QueryCaption = new(QueryCaptionType.Extractive),
+            QueryAnswer = new(QueryAnswerType.Extractive)
+        },
+        QueryType = SearchQueryType.Semantic
+    
 
             SearchResults<SearchDocument> searchResults = searchClient.Search<SearchDocument>(data.SearchText, options);
 
