@@ -61,8 +61,9 @@ namespace WebSearch.Function
             var suggester = new SearchSuggester("sg", new[] { "id", "content" });
             definition.Suggesters.Add(suggester);       
             
-/*
+
             SemanticSettings semanticSettings = new SemanticSettings();                       
+/*
             semanticSettings.Configurations.Add(new SemanticConfiguration
                 (
                     
@@ -115,6 +116,12 @@ namespace WebSearch.Function
                     },
                     QueryType = SearchQueryType.Semantic
                 });
+
+            foreach (QueryAnswerResult result in response.SemanticSearch.Answers)
+            {
+                Console.WriteLine($"Answer Highlights: {result.Highlights}");
+                Console.WriteLine($"Answer Text: {result.Text}");
+            }
 */
 
 
