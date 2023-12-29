@@ -46,12 +46,9 @@ namespace WebSearch.Function
 
             // Azure AI Search             
             Uri serviceEndpoint = new Uri($"https://{searchServiceName}.search.windows.net/");
+            AzureKeyCredential credential = new AzureKeyCredential(searchApiKey);
 
-            SearchClient searchClient = new(
-                serviceEndpoint,
-                searchIndexName,
-                new AzureKeyCredential(searchApiKey)
-            );
+            SearchClient searchClient = new SearchClient(serviceEndpoint, searchIndexName, credential);
 
             FieldBuilder fieldBuilder = new FieldBuilder();
     
