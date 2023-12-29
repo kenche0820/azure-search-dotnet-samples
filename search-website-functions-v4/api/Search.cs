@@ -106,9 +106,10 @@ namespace WebSearch.Function
                 Size = data.Size,
                 Skip = data.Skip,
                 IncludeTotalCount = true,
-*/                
+                
            
             };
+*/            
             SearchResults<SearchDocument> searchResults = searchClient.Search<SearchDocument>(data.SearchText, options);
 
 /*
