@@ -45,7 +45,7 @@ namespace WebSearch.Function
                 new AzureKeyCredential(searchApiKey)
             );
 
-            var getDocumentResponse = await searchClient.GetDocumentAsync<Hotel>(documentId);
+            var getDocumentResponse = await searchClient.GetDocumentAsync<SearchDocument>(documentId);
 
             // Data to return 
             var output = new LookupOutput

@@ -110,10 +110,10 @@ namespace WebSearch.Function
            
             };
 */            
-            SearchResults<Hotel> searchResults;
-            searchResults = searchClient.Search<Hotel>(data.SearchText, options);
+            SearchResults<SearchDocument> searchResults;
+            searchResults = searchClient.Search<SearchDocument>(data.SearchText, options);
 
-            foreach (SearchResult<Hotel> result in searchResults.GetResults())
+            foreach (SearchResult<SearchDocument> result in searchResults.GetResults())
             {
                 Console.WriteLine(result.Document);
             }

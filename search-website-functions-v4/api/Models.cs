@@ -53,7 +53,7 @@ namespace WebSearch.Models
         [JsonPropertyName("count")]
         public long? Count { get; set; }
         [JsonPropertyName("results")]
-        public List<SearchResult<Hotel>> Results { get; set; }
+        public List<SearchResult<SearchDocument>> Results { get; set; }
         [JsonPropertyName("facets")]
         public Dictionary<String, IList<FacetValue>> Facets { get; set; }
     }
