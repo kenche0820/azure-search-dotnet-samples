@@ -60,7 +60,7 @@ namespace WebSearch.Models
     class LookupOutput
     {
         [JsonPropertyName("document")]
-        public Hotel Document { get; set; }
+        public SearchDocument Document { get; set; }
     }
     public class ShareModel
     {
