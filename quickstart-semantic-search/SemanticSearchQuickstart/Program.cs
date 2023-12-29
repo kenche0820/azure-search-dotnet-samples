@@ -49,7 +49,7 @@ namespace SemanticSearchQuickstart
 
             // End the program
             Console.WriteLine("{0}", "Complete. Press any key to end this program...\n");
-            Console.ReadKey();
+//            Console.ReadKey();
         }
 
         // Delete the hotels-quickstart index to reuse its name
