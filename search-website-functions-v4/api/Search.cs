@@ -81,15 +81,28 @@ namespace WebSearch.Function
 
 
         
+            SearchOptions options;
 
-            SearchOptions options = new SearchOptions()
+            options = new SearchOptions()
+            {
+                QueryType = Azure.Search.Documents.Models.SearchQueryType.Semantic,
+                SemanticSearch = new()
+                {
+                    SemanticConfigurationName = "ken-semantic-config",
+                    QueryCaption = new(QueryCaptionType.Extractive)
+                }
+            };
+            options.Select.Add("id");
+            options.Select.Add("content");
+
+/*
+            options = new SearchOptions()
             {
                 SemanticSearch = new()
                 {
                     SemanticConfigurationName = "ken-semantic-config",
                     QueryCaption = new(QueryCaptionType.Extractive)
                 }
-/*
                 Size = data.Size,
                 Skip = data.Skip,
                 IncludeTotalCount = true,
