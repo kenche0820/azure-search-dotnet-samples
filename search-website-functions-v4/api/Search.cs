@@ -60,47 +60,43 @@ namespace WebSearch.Function
 
             var suggester = new SearchSuggester("sg", new[] { "id", "content" });
             definition.Suggesters.Add(suggester);       
-            
-/*
-            SemanticSettings semanticSettings = new SemanticSettings();                       
 
-            semanticSettings.Configurations.Add(new SemanticConfiguration
-                (
-                    
-                    "my-semantic-config",
-                    new PrioritizedFields()
-                    {
-                        TitleField = new SemanticField { FieldName = "id" },
-                        ContentFields = {
-                        new SemanticField { FieldName = "content" },
-                                                },
-                        KeywordFields = {
-                        new SemanticField { FieldName = "content" },
+            definition.SemanticSearch = new SemanticSearch
+            {
+                Configurations =
+                {
+                    new SemanticConfiguration("ken-semantic-config", new()
+                    {            
+                        TitleField = new SemanticField("id"),
+                        ContentFields =
+                        {
+                            new SemanticField("id"),
+                        },                            
+                        KeywordsFields =
+                        {
+                            new SemanticField("id"),                                                     
                         }
                     })
-                    
-                );
-
-            definition.SemanticSettings = semanticSettings;
-*/
-
-            SearchOptions options = new SearchOptions()
-            {
-                Size = data.Size,
-                Skip = data.Skip,
-                IncludeTotalCount = true,
-
-  /*              
-                QueryType = Azure.Search.Documents.Models.SearchQueryType.Semantic,                
-                QueryLanguage = QueryLanguage.EnUs,
-                SemanticConfigurationName = "ken-semantic-config",
-                QueryCaption = QueryCaptionType.Extractive,
-                QueryCaptionHighlightEnabled = true    
-*/                
+                }
             };
 
 
+        
 
+            SearchOptions options = new SearchOptions()
+            {
+                SemanticSearch = new()
+                {
+                    SemanticConfigurationName = "ken-semantic-config",
+                    QueryCaption = new(QueryCaptionType.Extractive)
+                }
+/*
+                Size = data.Size,
+                Skip = data.Skip,
+                IncludeTotalCount = true,
+*/                
+           
+            };
             SearchResults<SearchDocument> searchResults = searchClient.Search<SearchDocument>(data.SearchText, options);
 
 /*
