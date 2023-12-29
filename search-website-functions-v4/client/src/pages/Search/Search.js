@@ -49,6 +49,7 @@ export default function Search() {
             setIsLoading(false);
         } )
         .catch(error => {
+            console.log("Kenneth catches axios error")
             console.log(error);
             setIsLoading(false);
         });
