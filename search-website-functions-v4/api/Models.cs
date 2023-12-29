@@ -53,16 +53,16 @@ namespace WebSearch.Models
         [JsonPropertyName("count")]
         public long? Count { get; set; }
         [JsonPropertyName("results")]
-        public List<SearchResult<SearchDocument>> Results { get; set; }
+        public List<SearchResult<Hotel>> Results { get; set; }
         [JsonPropertyName("facets")]
         public Dictionary<String, IList<FacetValue>> Facets { get; set; }
     }
     class LookupOutput
     {
         [JsonPropertyName("document")]
-        public SearchDocument Document { get; set; }
+        public Hotel Document { get; set; }
     }
-    public class SharepointModel
+    public class ShareModel
     {
         public string content { get; set; }
     }
