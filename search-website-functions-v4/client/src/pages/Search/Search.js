@@ -47,6 +47,8 @@ export default function Search() {
             console.log(response.data.results)         
             setResults(response.data.results);
  //           setFacets(response.data.facets);
+            console.log("Kenneth checks response.data.count")     
+            console.log(response.data.count)
             setResultCount(response.data.count);
             setIsLoading(false);
         } )
