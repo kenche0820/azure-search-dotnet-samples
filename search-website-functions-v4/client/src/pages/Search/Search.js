@@ -22,7 +22,7 @@ export default function Search() {
   const [ top ] = useState(new URLSearchParams(location.search).get('top') ?? 8);
   const [ skip, setSkip ] = useState(new URLSearchParams(location.search).get('skip') ?? 0);
   const [ filters, setFilters ] = useState([]);
-  const [ facets, setFacets ] = useState({});
+ // const [ facets, setFacets ] = useState({});
   const [ isLoading, setIsLoading ] = useState(true);
 
   let resultsPerPage = top;
