@@ -115,6 +115,9 @@ namespace WebSearch.Function
 
             foreach (SearchResult<SearchDocument> result in searchResults.GetResults())
             {
+                var caption = result.SemanticSearch.Captions.FirstOrDefault();                
+                Console.WriteLine($"Caption Text: {caption.Text}");    
+                            
                 Console.WriteLine(result.Document);
             }
 
