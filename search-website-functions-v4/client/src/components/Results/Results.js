@@ -12,8 +12,8 @@ export default function Results(props) {
       />;
   });
 
-  let beginDocNumber = Math.min(props.skip + 1, props.count);
-  let endDocNumber = Math.min(props.skip + props.top, props.count);
+//  let beginDocNumber = Math.min(props.skip + 1, props.count);
+//  let endDocNumber = Math.min(props.skip + props.top, props.count);
 
   return (
     <div>
