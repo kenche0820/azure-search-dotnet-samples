@@ -49,10 +49,10 @@ namespace WebSearch.Function
                 Size = data.Size
             };
 
-            var suggesterResponse = await searchClient.SuggestAsync<SharepointModel>(data.SearchText, data.SuggesterName, options);
+            var suggesterResponse = await searchClient.SuggestAsync<SearchDocument>(data.SearchText, data.SuggesterName, options);
             
             // Data to return
-            var searchSuggestions = new Dictionary<string, List<SearchSuggestion<SharepointModel>>>
+            var searchSuggestions = new Dictionary<string, List<SearchSuggestion<SearchDocument>>>
             {
                 ["suggestions"] = suggesterResponse.Value.Results.ToList()
             };
