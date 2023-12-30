@@ -4,7 +4,7 @@ import CircularProgress  from '@mui/material/CircularProgress';
 import { useLocation, useNavigate } from "react-router-dom";
 
 import Results from '../../components/Results/Results';
-import Pager from '../../components/Pager/Pager';
+//import Pager from '../../components/Pager/Pager';
 //import Facets from '../../components/Facets/Facets';
 import SearchBar from '../../components/SearchBar/SearchBar';
 
@@ -25,7 +25,7 @@ export default function Search() {
  // const [ facets, setFacets ] = useState({});
   const [ isLoading, setIsLoading ] = useState(true);
 
-  let resultsPerPage = top;
+//  let resultsPerPage = top;
   
   useEffect(() => {
     setIsLoading(true);
