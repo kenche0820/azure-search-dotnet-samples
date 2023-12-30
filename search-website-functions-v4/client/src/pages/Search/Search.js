@@ -43,6 +43,8 @@ export default function Search() {
     axios.post( '/api/search', body)
       .then(response => {
             console.log(JSON.stringify(response.data))
+            console.log("Kenneth checks response.data.results")     
+            console.log(response.data.results)         
             setResults(response.data.results);
  //           setFacets(response.data.facets);
             setResultCount(response.data.count);
