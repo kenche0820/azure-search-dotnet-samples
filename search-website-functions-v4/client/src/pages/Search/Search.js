@@ -5,7 +5,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 
 import Results from '../../components/Results/Results';
 import Pager from '../../components/Pager/Pager';
-import Facets from '../../components/Facets/Facets';
+//import Facets from '../../components/Facets/Facets';
 import SearchBar from '../../components/SearchBar/SearchBar';
 
 import "./Search.css";
@@ -94,7 +94,7 @@ export default function Search() {
           <div className="search-bar">
             <SearchBar postSearchHandler={postSearchHandler} q={q}></SearchBar>
           </div>
-          <Facets facets={facets} filters={filters} setFilters={setFilters}></Facets>
+
         </div>
         {body}
       </div>
