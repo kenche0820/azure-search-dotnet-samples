@@ -44,7 +44,7 @@ export default function Search() {
       .then(response => {
             console.log(JSON.stringify(response.data))
             setResults(response.data.results);
-            setFacets(response.data.facets);
+ //           setFacets(response.data.facets);
             setResultCount(response.data.count);
             setIsLoading(false);
         } )
