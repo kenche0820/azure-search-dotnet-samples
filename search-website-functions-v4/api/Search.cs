@@ -117,8 +117,8 @@ namespace WebSearch.Function
             {
                 var caption = result.SemanticSearch.Captions.FirstOrDefault();                
                 Console.WriteLine($"Caption Text: {caption.Text}");    
-                            
-                Console.WriteLine(result.Document);
+
+//                Console.WriteLine(result.Document);
             }
 
             Console.WriteLine();            
