@@ -110,7 +110,7 @@ namespace WebSearch.Function
            
             };
 */            
-            console.log("Kenneth is in Search.cs");     
+            Console.log("Kenneth is in Search.cs");     
 
 
             SearchResults<SearchDocument> searchResults;
