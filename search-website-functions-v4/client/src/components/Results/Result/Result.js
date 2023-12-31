@@ -4,7 +4,7 @@ import './Result.css';
 
 export default function Result(props) {
     
-    console.log(`result prop = ${JSON.stringify(props)}`)
+ //   console.log(`result prop = ${JSON.stringify(props)}`)
     
     return(
     <div className="card result">
