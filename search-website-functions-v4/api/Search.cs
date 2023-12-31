@@ -110,6 +110,9 @@ namespace WebSearch.Function
            
             };
 */            
+            console.log("Kenneth is in Search.cs")     
+
+
             SearchResults<SearchDocument> searchResults;
             searchResults = searchClient.Search<SearchDocument>(data.SearchText, options);
 
