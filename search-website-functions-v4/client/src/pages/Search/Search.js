@@ -46,7 +46,7 @@ export default function Search() {
             console.log("Kenneth checks response.data.results")     
             console.log(response.data.results)         
             console.log("Kenneth checks response.data.results.semanticSearch.captions.text")              
-            console.log(response.data.results.semanticSearch.captions.text)                     
+            console.log(response.data.results.semanticSearch.captions[0].text)                     
             setResults(response.data.results);
  //           setFacets(response.data.facets);
 //            setResultCount(response.data.count);
