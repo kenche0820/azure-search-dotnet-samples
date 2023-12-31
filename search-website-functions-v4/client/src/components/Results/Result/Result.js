@@ -5,7 +5,8 @@ import './Result.css';
 export default function Result(props) {
     
  //   console.log(`result prop = ${JSON.stringify(props)}`)
-    console.log(props.document.content)
+ //   console.log(props.document.content)
+        console.log(props.semanticSearch.rerankerScore)
     
     return(
     <div className="card result">
