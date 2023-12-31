@@ -7,7 +7,7 @@ export default function Result(props) {
  //   console.log(`result prop = ${JSON.stringify(props)}`)
  //   console.log(props.document.content)
 
-     console.log(`result prop = ${JSON.stringify(props.semanticSearch)}`)
+//     console.log(`result prop = ${JSON.stringify(props.semanticSearch)}`)
     
     return(
     <div className="card result">

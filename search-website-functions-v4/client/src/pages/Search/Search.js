@@ -45,6 +45,8 @@ export default function Search() {
   //          console.log(JSON.stringify(response.data))
             console.log("Kenneth checks response.data.results")     
             console.log(response.data.results)         
+            console.log("Kenneth checks response.data.results.semanticSearch.rerankerScore")              
+            console.log(response.data.results.semanticSearch.rerankerScore)                     
             setResults(response.data.results);
  //           setFacets(response.data.facets);
 //            setResultCount(response.data.count);
