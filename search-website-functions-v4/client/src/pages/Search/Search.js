@@ -49,7 +49,7 @@ export default function Search() {
             var output = JSON.stringify(response.data.results); 
             var pos = output.indexOf("text"); 
             var pos2 = output.indexOf("highlights");
-            var partOutput = output.slice(pos+7,pos2-3);
+            var partOutput = output.slice(pos+7,pos+pos2-3);
             console.log(pos2);                   
             console.log(partOutput);    
      
