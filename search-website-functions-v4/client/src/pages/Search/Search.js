@@ -46,10 +46,10 @@ export default function Search() {
             console.log("Kenneth checks response.data.results")     
             console.log(response.data.results)         
             console.log("Kenneth checks response.data.results.semanticSearch.captions.text")              
-//            console.log(JSON.stringify(response.data.results))    
-            var output = JSON.stringify(response.data.results);
-          
-            console.log(output);            
+            var output = JSON.stringify(response.data.results);  
+            var partOutput = output.slice(100,120);        
+            console.log(partOutput);    
+     
             
             setResults(response.data.results);
  //           setFacets(response.data.facets);
