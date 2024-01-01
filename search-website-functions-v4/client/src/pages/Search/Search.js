@@ -43,13 +43,14 @@ export default function Search() {
     axios.post( '/api/search', body)
       .then(response => {
   //          console.log(JSON.stringify(response.data))
-            console.log("Kenneth checks response.data.results")     
-            console.log(response.data.results)         
-            console.log("Kenneth checks response.data.results.semanticSearch.captions.text")              
+            console.log("Kenneth checks response.data.results");     
+            console.log(response.data.results);         
+            console.log("Kenneth checks response.data.results.semanticSearch.captions.text");              
             var output = JSON.stringify(response.data.results); 
-            var pos = output.indexOf("text") 
-            var pos2 = output.indexOf("highlights")
-            var partOutput = output.slice(pos+7,pos2-3);              
+            var pos = output.indexOf("text"); 
+            var pos2 = output.indexOf("highlights");
+            var partOutput = output.slice(pos+7,pos2-3);
+            console.log(pos2);                   
             console.log(partOutput);    
      
             
