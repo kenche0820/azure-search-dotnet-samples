@@ -49,9 +49,9 @@ export default function Search() {
 //            console.log(JSON.stringify(response.data.results))    
             var output = '';
             for (var property in response.data.results) {
-              output += property + ': ' + response.data.results[property]+'; ';
+              output += property + ': ' + JSON.stringify(response.data.results[property])+'; ';
             }
-            alert(output);            
+            console.log(output);            
             
             setResults(response.data.results);
  //           setFacets(response.data.facets);
