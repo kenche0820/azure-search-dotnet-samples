@@ -50,7 +50,9 @@ export default function Search() {
             var output = '';
             for (var property in response.data.results) {
               for (var subproperty in property) {
-                output += subproperty + ': ' + JSON.stringify(property[subproperty])+'; ';
+                for (var subsubproperty in subproperty) {
+                  output += subsubproperty + ': ' + JSON.stringify(subproperty[subsubproperty])+'; ';
+                }
               }
             }
             console.log(output);            
