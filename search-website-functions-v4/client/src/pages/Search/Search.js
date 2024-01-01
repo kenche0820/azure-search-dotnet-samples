@@ -48,9 +48,8 @@ export default function Search() {
             console.log("Kenneth checks response.data.results.semanticSearch.captions.text")              
             var output = JSON.stringify(response.data.results); 
             var pos = output.indexOf("text") 
-//            var pos2 = output.indexOf("\"highlights\"")
-//            var partOutput = output.slice(pos+7,pos2-2);        
-            var partOutput = output.slice(pos+7,pos+1000);        
+            var pos2 = output.indexOf("highlights")
+            var partOutput = output.slice(pos+7,pos2-3);              
             console.log(partOutput);    
      
             
