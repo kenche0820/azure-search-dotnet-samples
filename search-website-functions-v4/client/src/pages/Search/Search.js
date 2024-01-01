@@ -47,14 +47,8 @@ export default function Search() {
             console.log(response.data.results)         
             console.log("Kenneth checks response.data.results.semanticSearch.captions.text")              
 //            console.log(JSON.stringify(response.data.results))    
-            var output = '';
-            for (var property in response.data.results) {
-              for (var subproperty in property) {
-                for (var subsubproperty in subproperty) {
-                  output += subsubproperty + ': ' + JSON.stringify(subproperty[subsubproperty])+'; ';
-                }
-              }
-            }
+            var output = JSON.stringify(response.data.results);
+          
             console.log(output);            
             
             setResults(response.data.results);
