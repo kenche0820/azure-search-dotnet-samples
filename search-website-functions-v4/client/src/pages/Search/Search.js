@@ -46,7 +46,13 @@ export default function Search() {
             console.log("Kenneth checks response.data.results")     
             console.log(response.data.results)         
             console.log("Kenneth checks response.data.results.semanticSearch.captions.text")              
-            console.log(JSON.stringify(response.data.results))                     
+//            console.log(JSON.stringify(response.data.results))    
+            var output = '';
+            for (var property in response.data.results) {
+              output += property + ': ' + response.data.results[property]+'; ';
+            }
+            alert(output);            
+            
             setResults(response.data.results);
  //           setFacets(response.data.facets);
 //            setResultCount(response.data.count);
