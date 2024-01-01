@@ -49,7 +49,9 @@ export default function Search() {
 //            console.log(JSON.stringify(response.data.results))    
             var output = '';
             for (var property in response.data.results) {
-              output += property + ': ' + JSON.stringify(response.data.results[property])+'; ';
+              for (var subproperty in property) {
+                output += subproperty + ': ' + JSON.stringify(property[subproperty])+'; ';
+              }
             }
             console.log(output);            
             
