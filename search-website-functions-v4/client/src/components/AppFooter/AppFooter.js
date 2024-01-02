@@ -4,6 +4,6 @@ import './AppFooter.css';
 
 export default function AppFooter() {
   return (
-
+    <footer className="footer"></footer>
   );
 };
