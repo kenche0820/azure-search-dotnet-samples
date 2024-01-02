@@ -49,9 +49,9 @@ export default function Search() {
             var output = JSON.stringify(response.data.results);                      
             var pos = output.indexOf("text"); 
             var partOutput = output.slice(pos+7,pos+2000);
-            var pos2 = partOutput.indexOf("highlights");
+            var pos2 = partOutput.indexOf("\"highlights\"");
             console.log(pos2);     
-            var finalOutput = partOutput.slice(1,pos2-3);              
+            var finalOutput = partOutput.slice(0,pos2-2);              
             console.log(finalOutput);    
      
             
