@@ -45,18 +45,20 @@ export default function Search() {
   //          console.log(JSON.stringify(response.data))
             console.log("Kenneth checks stringify response.data");              
             var output = JSON.stringify(response.data);   
+//            console.log(output); 
+                            
+            var pos = output.indexOf("metadata_spo_item_name"); 
+            var partOutput = output.slice(pos+22,pos+2000);
+            var pos2 = partOutput.indexOf("\"content\"");             
+            var finalOutput = partOutput.slice(0,pos2-2); 
+            console.log(finalOutput);             
+*/                         
 
-            console.log("Kenneth checks response.data.results");     
-            console.log(response.data.results);      
+//            console.log("Kenneth checks response.data.results");     
+//            console.log(response.data.results);      
                
               
-/*                             
-            var pos = output.indexOf("text"); 
-            var partOutput = output.slice(pos+7,pos+2000);
-            var pos2 = partOutput.indexOf("\"highlights\"");             
-            var finalOutput = partOutput.slice(0,pos2-2); 
-*/                         
-            console.log(output);    
+             
      
             
 //            setResults(finalOutput);            
