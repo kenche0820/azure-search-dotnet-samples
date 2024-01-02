@@ -5,6 +5,7 @@ import "./Results.css";
 
 export default function Results(props) {
 
+     console.log(`result prop = ${JSON.stringify(props)}`)
   /*
   let results = props.documents.map((result, index) => {
     return <Result 
