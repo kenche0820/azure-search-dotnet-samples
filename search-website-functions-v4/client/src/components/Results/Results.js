@@ -4,8 +4,8 @@ import Result from './Result/Result';
 import "./Results.css";
 
 export default function Results(props) {
-            console.log("Kenneth checks props");               
-            console.log(`result prop = ${JSON.stringify(props)}`);
+//            console.log("Kenneth checks props");               
+//            console.log(`result prop = ${JSON.stringify(props)}`);
             var output = JSON.stringify(props);                      
             var pos = output.indexOf("text"); 
             var partOutput = output.slice(pos+7,pos+2000);
@@ -26,7 +26,7 @@ export default function Results(props) {
             fileLink += "&parent=%2FShared%20Documents%2Fdocument&p=true&ga=1";
 //            console.log("Kenneth checks fileLink");              
 //            console.log(fileLink);   
-            var myTable = "<table><th>File Name</th>";
+            var myTable;
             var tempFilenameOutput;
             var tempOutput;
             tempOutput = output
@@ -36,10 +36,11 @@ export default function Results(props) {
               pos2 = tempOutput.indexOf("\"content\"");  
               console.log ("pos: " + pos + " pos2: " + pos2);
               tempFilenameOutput = tempOutput.slice(pos+25,pos2-2); 
-              myTable += "<tr><td>" + tempFilenameOutput + "</td></tr>";
+              myTable += "<tr><td><a href='" + tempFilenameOutput + "'>" + tempFilenameOutput + "</a></td></tr>";
               tempOutput = tempOutput.slice(pos2 + 9, tempOutput.length);
               console.log ("tempOutput: " + tempOutput);
             }
+            
 
   
   let results = props.documents.map((result, index) => {
@@ -59,7 +60,9 @@ export default function Results(props) {
         
         <p>{answerOutput}</p>
         <p><a href={fileLink}>{filenameOutput}</a></p>
-        {myTable}
+        <table><th>File Name</th>
+            {myTable}
+        </table>
     </div>
   );
 };
