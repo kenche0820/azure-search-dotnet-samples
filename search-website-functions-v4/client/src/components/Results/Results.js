@@ -4,8 +4,8 @@ import Result from './Result/Result';
 import "./Results.css";
 
 export default function Results(props) {
-//            console.log("Kenneth checks props");               
-//            console.log(`result prop = ${JSON.stringify(props)}`);
+            console.log("Kenneth checks props");               
+            console.log(`result prop = ${JSON.stringify(props)}`);
             var output = JSON.stringify(props);                      
             var pos = output.indexOf("text"); 
             var partOutput = output.slice(pos+7,pos+2000);
@@ -24,8 +24,8 @@ export default function Results(props) {
             var tempFilename = filenameOutput.replace(/_/g, "%5F");
             fileLink += tempFilename.replace(/\./g, "%2E");
             fileLink += "&parent=%2FShared%20Documents%2Fdocument&p=true&ga=1"
-            console.log("Kenneth checks fileLink");              
-            console.log(fileLink);   
+//            console.log("Kenneth checks fileLink");              
+//            console.log(fileLink);   
             
 
   
