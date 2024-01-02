@@ -42,26 +42,24 @@ export default function Search() {
 
     axios.post( '/api/search', body)
       .then(response => {
-  //          console.log(JSON.stringify(response.data))
+/*
+            console.log(JSON.stringify(response.data))
             console.log("Kenneth checks stringify response.data");              
             var output = JSON.stringify(response.data);   
-//            console.log(output); 
+            console.log(output); 
                             
             var pos = output.indexOf("metadata_spo_item_name"); 
-            var partOutput = output.slice(pos+22,pos+2000);
+            var partOutput = output.slice(pos+25,pos+2000);
             var pos2 = partOutput.indexOf("\"content\"");             
             var finalOutput = partOutput.slice(0,pos2-2); 
-            console.log(finalOutput);             
-                         
+            console.log(finalOutput);                            
 
-//            console.log("Kenneth checks response.data.results");     
-//            console.log(response.data.results);      
-               
-              
-             
-     
+            console.log("Kenneth checks response.data.results");     
+            console.log(response.data.results);      
+                         
+            setResults(finalOutput);   
+*/            
             
-//            setResults(finalOutput);            
             setResults(response.data.results);
  //           setFacets(response.data.facets);
 //            setResultCount(response.data.count);
