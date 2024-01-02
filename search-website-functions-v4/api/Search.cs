@@ -57,7 +57,7 @@ namespace WebSearch.Function
 
             var definition = new SearchIndex(searchIndexName, searchFields);
 
-            var suggester = new SearchSuggester("sg", new[] { "id", "content" });
+            var suggester = new SearchSuggester("sg", new[] { "id", "content","metadata_spo_item_name" });
             definition.Suggesters.Add(suggester);       
 
             definition.SemanticSearch = new SemanticSearch
@@ -66,14 +66,16 @@ namespace WebSearch.Function
                 {
                     new SemanticConfiguration("ken-semantic-config", new()
                     {            
-                        TitleField = new SemanticField("id"),
+                        TitleField = new SemanticField("metadata_spo_item_name"),
                         ContentFields =
                         {
                             new SemanticField("id"),
+                            new SemanticField("metadata_spo_item_name"),
                         },                            
                         KeywordsFields =
                         {
-                            new SemanticField("id"),                                                     
+                            new SemanticField("id"),      
+                            new SemanticField("metadata_spo_item_name"),                                                                                                    
                         }
                     })
                 }
