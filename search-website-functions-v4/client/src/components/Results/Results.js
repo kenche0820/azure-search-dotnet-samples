@@ -11,15 +11,15 @@ export default function Results(props) {
             var partOutput = output.slice(pos+7,pos+2000);
             var pos2 = partOutput.indexOf("\"highlights\"");             
             var answerOutput = partOutput.slice(0,pos2-2);  
-            console.log("Kenneth checks answerOutput");              
-            console.log(answerOutput);
+//            console.log("Kenneth checks answerOutput");              
+//            console.log(answerOutput);
             
             pos = output.indexOf("metadata_spo_item_name"); 
             partOutput = output.slice(pos+25,pos+2000);
             pos2 = partOutput.indexOf("\"content\"");             
             var filenameOutput = partOutput.slice(0,pos2-2); 
-            console.log("Kenneth checks filenameOutput");              
-            console.log(filenameOutput);   
+//            console.log("Kenneth checks filenameOutput");              
+//            console.log(filenameOutput);   
               
   
   let results = props.documents.map((result, index) => {
@@ -38,8 +38,8 @@ export default function Results(props) {
     <div>
       
       <div className="row row-cols-md-5 results">
-        {answerOutput}
-        {filenameOutput}
+        <p>{answerOutput}</p>
+        <p>{filenameOutput}</p>
       </div>
     </div>
   );
