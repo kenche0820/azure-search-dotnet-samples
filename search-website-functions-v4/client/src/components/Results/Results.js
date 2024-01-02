@@ -22,7 +22,7 @@ export default function Results(props) {
 //            console.log(filenameOutput);   
             var fileLink = "https://setelab.sharepoint.com/Shared%20Documents/Forms/AllItems.aspx?id=%2FShared%20Documents%2Fdocument%2F"
             fileLink += filenameOutput
-            fileLInk += "&parent=%2FShared%20Documents%2Fdocument&p=true&ga=1"
+            fileLink += "&parent=%2FShared%20Documents%2Fdocument&p=true&ga=1"
             console.log("Kenneth checks fileLink");              
             console.log(fileLink);   
             
