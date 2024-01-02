@@ -26,10 +26,12 @@ export default function Results(props) {
             fileLink += "&parent=%2FShared%20Documents%2Fdocument&p=true&ga=1";
 //            console.log("Kenneth checks fileLink");              
 //            console.log(fileLink);   
-            var myTable;
+
+/*
+            var myTable = "";
             var tempFilenameOutput;
             var tempOutput;
-            tempOutput = output
+            tempOutput = output;
             
             for (let i = 0; i < 3; i++) {
               pos = tempOutput.indexOf("metadata_spo_item_name"); 
@@ -40,8 +42,19 @@ export default function Results(props) {
               tempOutput = tempOutput.slice(pos2 + 9, tempOutput.length);
               console.log ("tempOutput: " + tempOutput);
             }
-            
-
+*/            
+            var x = document.createElement("TABLE");
+            x.setAttribute("id", "myTable");
+            document.body.appendChild(x);
+          
+            var y = document.createElement("TR");
+            y.setAttribute("id", "myTr");
+            document.getElementById("myTable").appendChild(y);
+          
+            var z = document.createElement("TD");
+            var t = document.createTextNode("cell");
+            z.appendChild(t);
+            document.getElementById("myTr").appendChild(z);
   
   let results = props.documents.map((result, index) => {
     return <Result 
@@ -50,19 +63,16 @@ export default function Results(props) {
       />;
   });
   
- console.log(results);
+// console.log(results);
 
 //  let beginDocNumber = Math.min(props.skip + 1, props.count);
 //  let endDocNumber = Math.min(props.skip + props.top, props.count);
 
   return (
-    <div>   
-        
+    <div>           
         <p>{answerOutput}</p>
-        <p><a href={fileLink}>{filenameOutput}</a></p>
-        <table><th>File Name</th>
-            {myTable}
-        </table>
+        <p><a href={fileLink}>{filenameOutput}</a></p>        
+        <p>{myTable}</p>
     </div>
   );
 };
