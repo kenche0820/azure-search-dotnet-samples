@@ -2,6 +2,7 @@
 using System.Text.Json.Serialization;
 using Azure.Search.Documents.Indexes;
 using Azure.Search.Documents.Indexes.Models;
+using WebSearch.Models;
 
 namespace WebSearch.Function
 {
@@ -12,6 +13,7 @@ namespace WebSearch.Function
 
         [SearchableField(AnalyzerName = LexicalAnalyzerName.Values.EnLucene)]
         public string content { get; set; }
+        public string metadata_spo_item_name { get; set; }
 
             }
 }

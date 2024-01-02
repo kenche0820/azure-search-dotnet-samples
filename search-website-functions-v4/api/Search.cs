@@ -93,6 +93,7 @@ namespace WebSearch.Function
                 }
             };
             options.Select.Add("id");
+            options.Select.Add("metadata_spo_item_name");
             options.Select.Add("content");
 
 /*
