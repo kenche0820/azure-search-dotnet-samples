@@ -27,9 +27,8 @@ export default function Results(props) {
 //            console.log("Kenneth checks fileLink");              
 //            console.log(fileLink);   
 
-
+/*
             var myTable = "";
-/*            
             var tempFilenameOutput;
             var tempOutput;
             tempOutput = output;
