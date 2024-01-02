@@ -32,6 +32,7 @@ export default function Results(props) {
       
       <div className="row row-cols-md-5 results">
         {finalOutput}
+        {results}
       </div>
     </div>
   );
