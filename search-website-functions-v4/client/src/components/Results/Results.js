@@ -22,6 +22,7 @@ export default function Results(props) {
 //            console.log(filenameOutput);   
             var fileLink = "https://setelab.sharepoint.com/Shared%20Documents/Forms/AllItems.aspx?id=%2FShared%20Documents%2Fdocument%2F"
             fileLink += filenameOutput.replace(/_/g, "%5F");
+            fileLink = fileLink.replace(/./g, "%2E");
             fileLink += "&parent=%2FShared%20Documents%2Fdocument&p=true&ga=1"
             console.log("Kenneth checks fileLink");              
             console.log(fileLink);   
@@ -43,7 +44,7 @@ export default function Results(props) {
   return (
     <div>   
         
-        <br><p>{answerOutput}</p></br>
+        <p>{answerOutput}</p>
         <p><a href={fileLink}>{filenameOutput}</a></p>
       
     </div>
