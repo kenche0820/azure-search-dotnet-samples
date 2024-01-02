@@ -52,9 +52,10 @@ export default function Search() {
             var pos = output.indexOf("text"); 
             var partOutput = output.slice(pos+7,pos+2000);
             var pos2 = partOutput.indexOf("\"highlights\"");             
-            var finalOutput = partOutput.slice(0,pos2-2);              
-            console.log(finalOutput);    
-*/     
+            var finalOutput = partOutput.slice(0,pos2-2); 
+*/                         
+            console.log(output);    
+     
             
 //            setResults(finalOutput);            
             setResults(response.data.results);
