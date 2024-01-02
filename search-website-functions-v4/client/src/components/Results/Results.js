@@ -58,6 +58,9 @@ export default function Results(props) {
             document.getElementById("myTr").appendChild(z);
 */            
 
+            var x = document.createElement("TABLE");
+            x.setAttribute("id", "myTable");
+            document.body.appendChild(x);
             var y;
             var tempFilenameOutput;
             var tempOutput;
