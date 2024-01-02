@@ -57,6 +57,8 @@ export default function Results(props) {
             z.appendChild(t);
             document.getElementById("myTr").appendChild(z);
 */
+            var x = document.createElement("TABLE");
+            x.setAttribute("id", "myTable");
             var table = document.getElementById("myTable");
             var row = table.insertRow(0);
             var cell1 = row.insertCell(0);
@@ -81,10 +83,6 @@ export default function Results(props) {
     <div>           
         <p>{answerOutput}</p>
         <p><a href={fileLink}>{filenameOutput}</a></p>        
-        <table id="myTable">
-          <th>File Name</th>
-          <th>Contents</th>
-        </table>
     </div>
   );
 };
