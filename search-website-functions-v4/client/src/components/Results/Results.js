@@ -20,7 +20,12 @@ export default function Results(props) {
             var filenameOutput = partOutput.slice(0,pos2-2); 
 //            console.log("Kenneth checks filenameOutput");              
 //            console.log(filenameOutput);   
-              
+            var fileLink = "https://setelab.sharepoint.com/Shared%20Documents/Forms/AllItems.aspx?id=%2FShared%20Documents%2Fdocument%2F"
+            fileLink += filenameOutput
+            fileLInk += "&parent=%2FShared%20Documents%2Fdocument&p=true&ga=1"
+            console.log("Kenneth checks fileLink");              
+            console.log(fileLink);   
+            
   
   let results = props.documents.map((result, index) => {
     return <Result 
@@ -37,10 +42,10 @@ export default function Results(props) {
   return (
     <div>
       
-      <div className="row row-cols-md-5 results">
+      
         <p>{answerOutput}</p>
-        <p>{filenameOutput}</p>
-      </div>
+        <p><a href={fileLink}>{filenameOutput}</a></p>
+      
     </div>
   );
 };
