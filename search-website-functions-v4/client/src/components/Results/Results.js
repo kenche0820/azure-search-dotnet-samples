@@ -43,7 +43,8 @@ export default function Results(props) {
               tempOutput = tempOutput.slice(pos2 + 9, tempOutput.length);
               console.log ("tempOutput: " + tempOutput);
             }
-*/            
+*/   
+/*         
             var x = document.createElement("TABLE");
             x.setAttribute("id", "myTable");
             document.body.appendChild(x);
@@ -56,6 +57,13 @@ export default function Results(props) {
             var t = document.createTextNode("cell");
             z.appendChild(t);
             document.getElementById("myTr").appendChild(z);
+*/
+            var table = document.getElementById("myTable");
+            var row = table.insertRow(0);
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            cell1.innerHTML = "NEW CELL1";
+            cell2.innerHTML = "NEW CELL2";            
   
   let results = props.documents.map((result, index) => {
     return <Result 
@@ -64,6 +72,7 @@ export default function Results(props) {
       />;
   });
   
+ // DO NOT COMMENT OUT - get error for unused var 
  console.log(results);
 
 //  let beginDocNumber = Math.min(props.skip + 1, props.count);
