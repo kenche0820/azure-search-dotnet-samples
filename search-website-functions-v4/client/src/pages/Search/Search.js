@@ -46,15 +46,14 @@ export default function Search() {
             console.log("Kenneth checks response.data.results");     
             console.log(response.data.results);         
             console.log("Kenneth checks response.data.results.semanticSearch.captions.text");              
-            var output = JSON.stringify(response.data.results); 
-            console.log(output)
-            /*
+            var output = JSON.stringify(response.data.results);                      
             var pos = output.indexOf("text"); 
-            var pos2 = output.indexOf("highlights");
-            var partOutput = output.slice(pos+7,pos+pos2-3);
-            console.log(pos2);                   
-            console.log(partOutput);    
-     */
+            var partOutput = output.slice(pos+7,pos+2000);
+            var pos2 = partOutput.indexOf("highlights");
+            console.log(pos2);     
+            var finalOutput = partOutput.slice(1,pos2-3);              
+            console.log(finalOutput);    
+     
             
             setResults(response.data.results);
  //           setFacets(response.data.facets);
