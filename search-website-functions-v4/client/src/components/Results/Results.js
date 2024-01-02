@@ -22,7 +22,7 @@ export default function Results(props) {
       />;
   });
   
-// let results = props;
+ results = results;
 
 //  let beginDocNumber = Math.min(props.skip + 1, props.count);
 //  let endDocNumber = Math.min(props.skip + props.top, props.count);
@@ -32,7 +32,7 @@ export default function Results(props) {
       
       <div className="row row-cols-md-5 results">
         {finalOutput}
-        {results}
+        
       </div>
     </div>
   );
