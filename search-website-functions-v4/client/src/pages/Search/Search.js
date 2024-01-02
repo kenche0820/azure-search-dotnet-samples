@@ -52,7 +52,7 @@ export default function Search() {
             var pos2 = partOutput.indexOf("\"content\"");             
             var finalOutput = partOutput.slice(0,pos2-2); 
             console.log(finalOutput);             
-*/                         
+                         
 
 //            console.log("Kenneth checks response.data.results");     
 //            console.log(response.data.results);      
