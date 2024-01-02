@@ -20,21 +20,25 @@ export default function Results(props) {
             var filenameOutput = partOutput.slice(0,pos2-2); 
 //            console.log("Kenneth checks filenameOutput");              
 //            console.log(filenameOutput);   
-            var fileLink = "https://setelab.sharepoint.com/Shared%20Documents/Forms/AllItems.aspx?id=%2FShared%20Documents%2Fdocument%2F"
+            var fileLink = "https://setelab.sharepoint.com/Shared%20Documents/Forms/AllItems.aspx?id=%2FShared%20Documents%2Fdocument%2F";
             var tempFilename = filenameOutput.replace(/_/g, "%5F");
             fileLink += tempFilename.replace(/\./g, "%2E");
-            fileLink += "&parent=%2FShared%20Documents%2Fdocument&p=true&ga=1"
+            fileLink += "&parent=%2FShared%20Documents%2Fdocument&p=true&ga=1";
 //            console.log("Kenneth checks fileLink");              
 //            console.log(fileLink);   
-            var myTable = "<table><th>File Name</th>"
+            var myTable = "<table><th>File Name</th>";
+            var tempFilenameOutput;
+            var tempOutput;
+            tempOutput = output
             
-            for (let i = 0; i < 4; i++) {
-              pos = output.indexOf("metadata_spo_item_name"); 
-              pos2 = output.indexOf("\"content\"");  
-              console.log ("pos: " + pos + "pos2: " + pos2)
-              filenameOutput = output.slice(pos+25,pos2-2); 
-              myTable += "<tr><td>" + filenameOutput + "</td></tr>"
-              output = output.slice(pos2 + 9, output.length)
+            for (let i = 0; i < 3; i++) {
+              pos = tempOutput.indexOf("metadata_spo_item_name"); 
+              pos2 = tempOutput.indexOf("\"content\"");  
+              console.log ("pos: " + pos + " pos2: " + pos2);
+              tempFilenameOutput = tempOutput.slice(pos+25,pos2-2); 
+              myTable += "<tr><td>" + tempFilenameOutput + "</td></tr>";
+              tempOutput = tempOutput.slice(pos2 + 9, tempOutput.length);
+              console.log ("tempOutput: " + tempOutput);
             }
 
   
