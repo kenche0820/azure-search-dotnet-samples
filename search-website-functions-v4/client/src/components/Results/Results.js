@@ -5,7 +5,15 @@ import "./Results.css";
 
 export default function Results(props) {
 
-     console.log(`result prop = ${JSON.stringify(props)}`)
+//     console.log(`result prop = ${JSON.stringify(props)}`)
+            console.log("Kenneth checks props");               
+            var output = JSON.stringify(props);                      
+            var pos = output.indexOf("text"); 
+            var partOutput = output.slice(pos+7,pos+2000);
+            var pos2 = partOutput.indexOf("\"highlights\"");             
+            var finalOutput = partOutput.slice(0,pos2-2);              
+            console.log(finalOutput);    
+     
   
   let results = props.documents.map((result, index) => {
     return <Result 
