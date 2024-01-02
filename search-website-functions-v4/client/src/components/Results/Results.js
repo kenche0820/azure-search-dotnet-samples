@@ -58,9 +58,8 @@ export default function Results(props) {
             document.getElementById("myTr").appendChild(z);
 */
             var x = document.createElement("TABLE");
-            x.setAttribute("id", "myTable");
-            var table = document.getElementById("myTable");
-            var row = table.insertRow(0);
+            x.setAttribute("id", "myTable");            
+            var row = document.getElementById("myTable").insertRow(-1);
             var cell1 = row.insertCell(0);
             var cell2 = row.insertCell(1);
             cell1.innerHTML = "NEW CELL1";
