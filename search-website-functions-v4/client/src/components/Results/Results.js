@@ -43,7 +43,7 @@ export default function Results(props) {
               console.log ("tempOutput: " + tempOutput);
             }
 */   
-         
+/*         
             var x = document.createElement("TABLE");
             x.setAttribute("id", "myTable");
             document.body.appendChild(x);
@@ -56,16 +56,32 @@ export default function Results(props) {
             var t = document.createTextNode(filenameOutput);
             z.appendChild(t);
             document.getElementById("myTr").appendChild(z);
+*/            
 
-/*
-            var x = document.createElement("TABLE");
-            x.setAttribute("id", "myTable");            
-            var row = document.getElementById("myTable").insertRow(-1);
-            var cell1 = row.insertCell(0);
-            var cell2 = row.insertCell(1);
-            cell1.innerHTML = "NEW CELL1";
-            cell2.innerHTML = "NEW CELL2";    
-*/                    
+            var y;
+            var tempFilenameOutput;
+            var tempOutput;
+            tempOutput = output;
+            
+            for (let i = 0; i < 3; i++) {
+              pos = tempOutput.indexOf("metadata_spo_item_name"); 
+              pos2 = tempOutput.indexOf("\"content\"");  
+              console.log ("pos: " + pos + " pos2: " + pos2);
+              tempFilenameOutput = tempOutput.slice(pos+25,pos2-2); 
+
+              y = document.createElement("TR");
+              y.setAttribute("id", "myTr");
+              document.getElementById("myTable").appendChild(y);
+            
+              var z = document.createElement("TD");
+              var t = document.createTextNode(tempFilenameOutput);
+              z.appendChild(t);
+              document.getElementById("myTr").appendChild(z);
+              
+              tempOutput = tempOutput.slice(pos2 + 9, tempOutput.length);
+//              console.log ("tempOutput: " + tempOutput);
+            }
+              
   
   let results = props.documents.map((result, index) => {
     return <Result 
