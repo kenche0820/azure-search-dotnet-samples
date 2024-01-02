@@ -82,7 +82,10 @@ export default function Results(props) {
     <div>           
         <p>{answerOutput}</p>
         <p><a href={fileLink}>{filenameOutput}</a></p>        
-        <p>{myTable}</p>
+        <table id="myTable">
+          <th>File Name</th>
+          <th>Contents</th>
+        </table>
     </div>
   );
 };
