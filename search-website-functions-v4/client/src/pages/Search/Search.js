@@ -54,7 +54,8 @@ export default function Search() {
             console.log(finalOutput);    
      
             
-            setResults(response.data.results);
+            setResults(finalOutput);            
+//            setResults(response.data.results);
  //           setFacets(response.data.facets);
 //            setResultCount(response.data.count);
             setIsLoading(false);
