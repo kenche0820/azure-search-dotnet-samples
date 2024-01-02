@@ -43,7 +43,7 @@ export default function Results(props) {
               console.log ("tempOutput: " + tempOutput);
             }
 */   
-/*         
+         
             var x = document.createElement("TABLE");
             x.setAttribute("id", "myTable");
             document.body.appendChild(x);
@@ -53,17 +53,19 @@ export default function Results(props) {
             document.getElementById("myTable").appendChild(y);
           
             var z = document.createElement("TD");
-            var t = document.createTextNode("cell");
+            var t = document.createTextNode(filenameOutput);
             z.appendChild(t);
             document.getElementById("myTr").appendChild(z);
-*/
+
+/*
             var x = document.createElement("TABLE");
             x.setAttribute("id", "myTable");            
             var row = document.getElementById("myTable").insertRow(-1);
             var cell1 = row.insertCell(0);
             var cell2 = row.insertCell(1);
             cell1.innerHTML = "NEW CELL1";
-            cell2.innerHTML = "NEW CELL2";            
+            cell2.innerHTML = "NEW CELL2";    
+*/                    
   
   let results = props.documents.map((result, index) => {
     return <Result 
