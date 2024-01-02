@@ -64,7 +64,7 @@ export default function Results(props) {
       />;
   });
   
-// console.log(results);
+ console.log(results);
 
 //  let beginDocNumber = Math.min(props.skip + 1, props.count);
 //  let endDocNumber = Math.min(props.skip + props.top, props.count);
