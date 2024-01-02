@@ -31,7 +31,7 @@ export default function Results(props) {
     <div>
       
       <div className="row row-cols-md-5 results">
-        {results}
+        {finalOutput}
       </div>
     </div>
   );
