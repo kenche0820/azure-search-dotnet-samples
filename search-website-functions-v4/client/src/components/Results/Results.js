@@ -30,41 +30,22 @@ export default function Results(props) {
             fileLink += tempFilename.replace(/\./g, "%2E");
             fileLink += "&parent=%2FShared%20Documents%2Fdocument&p=true&ga=1";
 //            console.log("Kenneth checks fileLink");              
-//            console.log(fileLink);   
-
-/*
-            var myTable = "";
-            var tempFilenameOutput;
-            var tempOutput;
-            tempOutput = output;
-            
-            for (let i = 0; i < 3; i++) {
-              pos = tempOutput.indexOf("metadata_spo_item_name"); 
-              pos2 = tempOutput.indexOf("\"content\"");  
-              console.log ("pos: " + pos + " pos2: " + pos2);
-              tempFilenameOutput = tempOutput.slice(pos+25,pos2-2); 
-              myTable += "<tr><td><a href='" + tempFilenameOutput + "'>" + tempFilenameOutput + "</a></td></tr>";
-              tempOutput = tempOutput.slice(pos2 + 9, tempOutput.length);
-              console.log ("tempOutput: " + tempOutput);
-            }
-*/   
-        
+//            console.log(fileLink);          
 
             var x = document.createElement("TABLE");
             x.setAttribute("id", "myTable");
             document.body.appendChild(x);
             var y;
             var z;
-            var t;
-            
-  //          var tempOutput;
+            var t;  
             var propResult;
             var propCaption;
             var propScore;
             var propFilename;
             var propContent;
+            var tempLink;
             
-            for (let i = 0; i < 3; i++) {
+            for (let i = 0; i < propCount; i++) {
               console.log("i: " + i);                             
               console.log("Kenneth checks captions");               
               propResult = props.documents[i]; 
@@ -78,23 +59,18 @@ export default function Results(props) {
               console.log(propFilename);  
               console.log("Kenneth checks content");   
               propContent = propResult.document.content.slice(0,1000)                       
-              console.log(propContent);  
-
-/*
-              var tempFilenameOutput;
-              tempOutput = output; 
-              pos = tempOutput.indexOf("metadata_spo_item_name"); 
-              pos2 = tempOutput.indexOf("\"content\"");  
-              console.log ("pos: " + pos + " pos2: " + pos2);
-              tempFilenameOutput = tempOutput.slice(pos+25,pos2-2); 
-*/              
+              console.log(propContent);             
 
               y = document.createElement("TR");
               y.setAttribute("id", "myTr");
               document.getElementById("myTable").appendChild(y);
             
+              tempLink = document.createElement('a');
+              tempLink.textContent = propFilename;
+              tempLink.href = "https://setelab.sharepoint.com/Shared%20Documents/Forms/AllItems.aspx?id=%2FShared%20Documents%2Fdocument%2F" + propFilename + "&parent=%2FShared%20Documents%2Fdocument&p=true&ga=1";
+            //  document.getElementById('where_to_insert').appendChild(tempLink);
               z = document.createElement("TD");
-              t = document.createTextNode(propFilename);              
+              t = document.createTextNode(tempLink);              
               z.appendChild(t);
               y.appendChild(z);
               z = document.createElement("TD");
@@ -105,9 +81,6 @@ export default function Results(props) {
               t = document.createTextNode(propContent);              
               z.appendChild(t);
               y.appendChild(z);
-              
-//              tempOutput = tempOutput.slice(pos2 + 9, tempOutput.length);
-//              console.log ("tempOutput: " + tempOutput);
             }
               
   
