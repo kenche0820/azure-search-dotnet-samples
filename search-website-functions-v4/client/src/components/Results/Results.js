@@ -57,6 +57,54 @@ export default function Results(props) {
             z.appendChild(t);
             document.getElementById("myTr").appendChild(z);
 */            
+/*
+            var x = document.createElement("TABLE");
+            x.setAttribute("id", "myTable");
+            document.body.appendChild(x);
+            var y;
+            var tempFilenameOutput;
+            var tempOutput;
+            tempOutput = output;
+            
+            for (let i = 0; i < 3; i++) {
+              pos = tempOutput.indexOf("metadata_spo_item_name"); 
+              pos2 = tempOutput.indexOf("\"content\"");  
+              console.log ("pos: " + pos + " pos2: " + pos2);
+              tempFilenameOutput = tempOutput.slice(pos+25,pos2-2); 
+
+              y = document.createElement("TR");
+              y.setAttribute("id", "myTr");
+              document.getElementById("myTable").appendChild(y);
+            
+              var z = document.createElement("TD");
+              var t = document.createTextNode(tempFilenameOutput);
+              console.log("i: " + i + "filename: " + tempFilenameOutput);
+              z.appendChild(t);
+              y.appendChild(z);
+              
+              tempOutput = tempOutput.slice(pos2 + 9, tempOutput.length);
+//              console.log ("tempOutput: " + tempOutput);
+            }
+   */           
+  
+  let results = props.documents.map((result, index) => {
+    return <Result 
+        key={index} 
+        document={result.document}
+      />;
+  });
+  
+ // DO NOT COMMENT OUT - get error for unused var 
+ console.log(results);
+
+//  let beginDocNumber = Math.min(props.skip + 1, props.count);
+//  let endDocNumber = Math.min(props.skip + props.top, props.count);
+
+  return (
+    <div>           
+        <p>{answerOutput}</p>
+        <p><a href={fileLink}>{filenameOutput}</a></p>     
+
 
             var x = document.createElement("TABLE");
             x.setAttribute("id", "myTable");
@@ -85,25 +133,9 @@ export default function Results(props) {
               tempOutput = tempOutput.slice(pos2 + 9, tempOutput.length);
 //              console.log ("tempOutput: " + tempOutput);
             }
-              
-  
-  let results = props.documents.map((result, index) => {
-    return <Result 
-        key={index} 
-        document={result.document}
-      />;
-  });
-  
- // DO NOT COMMENT OUT - get error for unused var 
- console.log(results);
 
-//  let beginDocNumber = Math.min(props.skip + 1, props.count);
-//  let endDocNumber = Math.min(props.skip + props.top, props.count);
 
-  return (
-    <div>           
-        <p>{answerOutput}</p>
-        <p><a href={fileLink}>{filenameOutput}</a></p>        
+
     </div>
   );
 };
