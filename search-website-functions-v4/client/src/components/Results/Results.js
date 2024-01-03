@@ -43,7 +43,7 @@ export default function Results(props) {
             var propScore;
             var propFilename;
             var propContent;
-            var tempLink;
+     //       var tempLink;
             
             for (let i = 0; i < propCount; i++) {
               console.log("i: " + i);                             
@@ -65,14 +65,14 @@ export default function Results(props) {
               y.setAttribute("id", "myTr");
               document.getElementById("myTable").appendChild(y);
             
-              tempLink = document.createElement('a');
-              tempLink.textContent = propFilename;
-              tempLink.href = "https://setelab.sharepoint.com/Shared%20Documents/Forms/AllItems.aspx?id=%2FShared%20Documents%2Fdocument%2F" + propFilename + "&parent=%2FShared%20Documents%2Fdocument&p=true&ga=1";              
+      //        tempLink = document.createElement('a');
+      //        tempLink.textContent = propFilename;
+      //        tempLink.href = "https://setelab.sharepoint.com/Shared%20Documents/Forms/AllItems.aspx?id=%2FShared%20Documents%2Fdocument%2F" + propFilename + "&parent=%2FShared%20Documents%2Fdocument&p=true&ga=1";              
               z = document.createElement("TD");
-              z.setAttribute("id", "myTd");
-              document.getElementById("myTd").appendChild(tempLink);
-      //        t = document.createTextNode(tempLink);              
-      //        z.appendChild(t);
+      //        z.setAttribute("id", "myTd");
+      //        document.getElementById("myTd").appendChild(tempLink);
+              t = document.createTextNode(propFilename);              
+              z.appendChild(t);
               y.appendChild(z);
               z = document.createElement("TD");
               t = document.createTextNode(propScore);              
