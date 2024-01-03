@@ -88,7 +88,7 @@ export default function Results(props) {
               propFilename = propResult.document.metadata_spo_item_name                       
               console.log(propFilename);  
               console.log("Kenneth checks content");   
-              propContent = propResult.document.content                       
+              propContent = propResult.document.content.slice(0,1000)                       
               console.log(propContent);  
 
 
@@ -102,8 +102,15 @@ export default function Results(props) {
               document.getElementById("myTable").appendChild(y);
             
               var z = document.createElement("TD");
-              var t = document.createTextNode(tempFilenameOutput);
-              console.log("i: " + i + "filename: " + tempFilenameOutput);
+              var t = document.createTextNode(propFilename);              
+              z.appendChild(t);
+              y.appendChild(z);
+              var z = document.createElement("TD");
+              var t = document.createTextNode(propScore);              
+              z.appendChild(t);
+              y.appendChild(z);
+              var z = document.createElement("TD");
+              var t = document.createTextNode(propContent);              
               z.appendChild(t);
               y.appendChild(z);
               
