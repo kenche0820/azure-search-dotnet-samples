@@ -4,8 +4,14 @@ import Result from './Result/Result';
 import "./Results.css";
 
 export default function Results(props) {
-//            console.log("Kenneth checks props");               
-//            console.log(`result prop = ${JSON.stringify(props)}`);
+              console.log("Kenneth checks props");               
+              console.log(props);
+//            console.log(`result prop = ${JSON.stringif0y(props)}`);
+
+//            const result = props[0]; // or 1? whichever you need;
+//            console.log(semanticSearch.captions[0].text);
+
+
             var output = JSON.stringify(props);                      
             var pos = output.indexOf("text"); 
             var partOutput = output.slice(pos+7,pos+2000);
