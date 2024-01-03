@@ -119,14 +119,14 @@ namespace WebSearch.Function
             SearchResults<SearchDocument> searchResults;
             searchResults = searchClient.Search<SearchDocument>(data.SearchText, options);
 
+/*
             foreach (SearchResult<SearchDocument> result in searchResults.GetResults())
             {
                 var caption = result.SemanticSearch.Captions.FirstOrDefault();                
                 Console.WriteLine($"Caption Text: {caption.Text}");    
-
-//                Console.WriteLine(result.Document);
+                Console.WriteLine(result.Document);
             }
-
+*/
             Console.WriteLine();            
 
 /*
