@@ -4,11 +4,11 @@ import Result from './Result/Result';
 import "./Results.css";
 
 export default function Results(props) {
-/*
+
             console.log("Kenneth checks props");               
             console.log(props);
-            console.log(`result prop = ${JSON.stringif0y(props)}`);
-*/
+//            console.log(`result prop = ${JSON.stringif0y(props)}`);
+
             var output = JSON.stringify(props);                      
             var pos = output.indexOf("text"); 
             var partOutput = output.slice(pos+7,pos+2000);
@@ -44,20 +44,7 @@ export default function Results(props) {
               console.log ("tempOutput: " + tempOutput);
             }
 */   
-/*         
-            var x = document.createElement("TABLE");
-            x.setAttribute("id", "myTable");
-            document.body.appendChild(x);
-          
-            var y = document.createElement("TR");
-            y.setAttribute("id", "myTr");
-            document.getElementById("myTable").appendChild(y);
-          
-            var z = document.createElement("TD");
-            var t = document.createTextNode(filenameOutput);
-            z.appendChild(t);
-            document.getElementById("myTr").appendChild(z);
-*/            
+        
 
             var x = document.createElement("TABLE");
             x.setAttribute("id", "myTable");
@@ -66,7 +53,7 @@ export default function Results(props) {
             var z;
             var t;
             
-            var tempOutput;
+  //          var tempOutput;
             var propResult;
             var propCaption;
             var propScore;
@@ -89,14 +76,14 @@ export default function Results(props) {
               propContent = propResult.document.content.slice(0,1000)                       
               console.log(propContent);  
 
-
+/*
               var tempFilenameOutput;
               tempOutput = output; 
               pos = tempOutput.indexOf("metadata_spo_item_name"); 
               pos2 = tempOutput.indexOf("\"content\"");  
               console.log ("pos: " + pos + " pos2: " + pos2);
               tempFilenameOutput = tempOutput.slice(pos+25,pos2-2); 
-              
+*/              
 
               y = document.createElement("TR");
               y.setAttribute("id", "myTr");
@@ -115,7 +102,7 @@ export default function Results(props) {
               z.appendChild(t);
               y.appendChild(z);
               
-              tempOutput = tempOutput.slice(pos2 + 9, tempOutput.length);
+//              tempOutput = tempOutput.slice(pos2 + 9, tempOutput.length);
 //              console.log ("tempOutput: " + tempOutput);
             }
               
