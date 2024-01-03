@@ -7,6 +7,10 @@ export default function Results(props) {
 
             console.log("Kenneth checks props");               
             console.log(props);
+            console.log("Kenneth checks count");  
+            var propCount;
+            propCount = props.documents.length;             
+            console.log(propCount);            
 //            console.log(`result prop = ${JSON.stringif0y(props)}`);
 
             var output = JSON.stringify(props);                      
