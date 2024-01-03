@@ -79,7 +79,7 @@ export default function Results(props) {
               var z = document.createElement("TD");
               var t = document.createTextNode(tempFilenameOutput);
               z.appendChild(t);
-              document.getElementById("myTr").appendChild(z);
+              y.appendChild(z);
               
               tempOutput = tempOutput.slice(pos2 + 9, tempOutput.length);
 //              console.log ("tempOutput: " + tempOutput);
