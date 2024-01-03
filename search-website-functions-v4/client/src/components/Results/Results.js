@@ -34,7 +34,16 @@ export default function Results(props) {
 
             var x = document.createElement("TABLE");
             x.setAttribute("id", "myTable");
+            x.style.borderStyle = "solid";
             document.body.appendChild(x);
+            var header = table.createTHead();
+            var row = header.insertRow(0);    
+            var cell0 = row.insertCell(0);
+            cell0.innerHTML = "<b>File Name</b>";
+            var cell1 = row.insertCell(1);
+            cell1.innerHTML = "<b>Score</b>";
+            var cell2 = row.insertCell(2);
+            cell2.innerHTML = "<b>Contents</b>";
             var y;
             var z;
             var t;  
