@@ -9,7 +9,7 @@ export default function Results(props) {
 //            console.log(`result prop = ${JSON.stringif0y(props)}`);
 
               console.log("Kenneth checks captions");               
-              const propResult = props[0]; // or 1? whichever you need;
+              const propResult = props.documents[0]; // or 1? whichever you need;
               console.log(propResult.semanticSearch.captions[0].text);                        
 
 
