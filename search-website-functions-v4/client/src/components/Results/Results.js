@@ -68,14 +68,13 @@ export default function Results(props) {
             var y;
             var z;
             var t;
-            var tempFilenameOutput;
+            
             var tempOutput;
             var propResult;
             var propCaption;
             var propScore;
             var propFilename;
             var propContent;
-            tempOutput = output;
             
             for (let i = 0; i < 3; i++) {
 
@@ -93,11 +92,14 @@ export default function Results(props) {
               propContent = propResult.document.content.slice(0,1000)                       
               console.log(propContent);  
 
-
+/*
+              var tempFilenameOutput;
+              tempOutput = output; 
               pos = tempOutput.indexOf("metadata_spo_item_name"); 
               pos2 = tempOutput.indexOf("\"content\"");  
               console.log ("pos: " + pos + " pos2: " + pos2);
               tempFilenameOutput = tempOutput.slice(pos+25,pos2-2); 
+*/              
 
               y = document.createElement("TR");
               y.setAttribute("id", "myTr");
