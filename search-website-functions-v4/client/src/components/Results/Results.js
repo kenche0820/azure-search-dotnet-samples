@@ -8,6 +8,7 @@ export default function Results(props) {
             console.log("Kenneth checks props");               
             console.log(props);
             console.log(`result prop = ${JSON.stringif0y(props)}`);
+*/
             var output = JSON.stringify(props);                      
             var pos = output.indexOf("text"); 
             var partOutput = output.slice(pos+7,pos+2000);
@@ -15,7 +16,7 @@ export default function Results(props) {
             var answerOutput = partOutput.slice(0,pos2-2);  
             console.log("Kenneth checks answerOutput");              
             console.log(answerOutput);
-*/            
+            
             
             pos = output.indexOf("metadata_spo_item_name"); 
             partOutput = output.slice(pos+25,pos+2000);
