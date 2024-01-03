@@ -78,6 +78,7 @@ export default function Results(props) {
             
               var z = document.createElement("TD");
               var t = document.createTextNode(tempFilenameOutput);
+              console.log("i: " + i + "filename: " + tempFilenameOutput);
               z.appendChild(t);
               y.appendChild(z);
               
