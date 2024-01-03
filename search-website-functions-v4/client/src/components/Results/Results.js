@@ -36,7 +36,7 @@ export default function Results(props) {
             x.setAttribute("id", "myTable");
             x.style.borderStyle = "solid";
             document.body.appendChild(x);
-            var header = table.createTHead();
+            var header = x.createTHead();
             var row = header.insertRow(0);    
             var cell0 = row.insertCell(0);
             cell0.innerHTML = "<b>File Name</b>";
