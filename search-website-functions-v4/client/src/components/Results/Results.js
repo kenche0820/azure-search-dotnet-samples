@@ -66,6 +66,8 @@ export default function Results(props) {
             x.setAttribute("id", "myTable");
             document.body.appendChild(x);
             var y;
+            var z;
+            var t;
             var tempFilenameOutput;
             var tempOutput;
             var propResult;
@@ -101,16 +103,16 @@ export default function Results(props) {
               y.setAttribute("id", "myTr");
               document.getElementById("myTable").appendChild(y);
             
-              var z = document.createElement("TD");
-              var t = document.createTextNode(propFilename);              
+              z = document.createElement("TD");
+              t = document.createTextNode(propFilename);              
               z.appendChild(t);
               y.appendChild(z);
-              var z = document.createElement("TD");
-              var t = document.createTextNode(propScore);              
+              z = document.createElement("TD");
+              t = document.createTextNode(propScore);              
               z.appendChild(t);
               y.appendChild(z);
-              var z = document.createElement("TD");
-              var t = document.createTextNode(propContent);              
+              z = document.createElement("TD");
+              t = document.createTextNode(propContent);              
               z.appendChild(t);
               y.appendChild(z);
               
