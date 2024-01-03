@@ -155,7 +155,7 @@ namespace WebSearch.Function
             // Data to return 
             var output = new SearchOutput
             {
-                Count = searchResults.TotalCount,
+//                Count = searchResults.TotalCount,
                 Results = searchResults.GetResults().ToList(),
             };
             
