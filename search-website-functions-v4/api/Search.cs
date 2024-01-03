@@ -93,6 +93,9 @@ namespace WebSearch.Function
                     SemanticConfigurationName = "ken-semantic-config",
                     QueryCaption = new(QueryCaptionType.Extractive)
                 }
+                Size = data.Size,
+                Skip = data.Skip,
+                IncludeTotalCount = true,
             };
             options.Select.Add("id");
             options.Select.Add("metadata_spo_item_name");
@@ -109,8 +112,6 @@ namespace WebSearch.Function
                 Size = data.Size,
                 Skip = data.Skip,
                 IncludeTotalCount = true,
-                
-           
             };
 */            
             Console.WriteLine("Kenneth is in Search.cs");     
@@ -155,7 +156,7 @@ namespace WebSearch.Function
             // Data to return 
             var output = new SearchOutput
             {
-//                Count = searchResults.TotalCount,
+                Count = searchResults.TotalCount,
                 Results = searchResults.GetResults().ToList(),
             };
             
