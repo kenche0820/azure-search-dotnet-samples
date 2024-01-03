@@ -91,8 +91,9 @@ namespace WebSearch.Function
                 SemanticSearch = new()
                 {
                     SemanticConfigurationName = "ken-semantic-config",
-                    QueryCaption = new(QueryCaptionType.Extractive)
-                }
+                    QueryCaption = new(QueryCaptionType.Extractive),
+                    QueryAnswer = new(QueryAnswerType.Extractive)
+                },
                 Size = data.Size,
                 Skip = data.Skip,
                 IncludeTotalCount = true,
