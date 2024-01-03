@@ -9,9 +9,12 @@ export default function Results(props) {
 //            console.log(`result prop = ${JSON.stringif0y(props)}`);
 
               console.log("Kenneth checks captions");               
-              const propResult = props.documents[0]; // or 1? whichever you need;
+              const propResult = props.documents[0]; 
               console.log(propResult.semanticSearch.captions[0].text);                        
+              console.log("Kenneth checks score");                             
+              console.log(propResult.semanticSearch.rerankerScore);                        
 
+              
 
             var output = JSON.stringify(props);                      
             var pos = output.indexOf("text"); 
