@@ -13,10 +13,7 @@ export default function Results(props) {
             var pos = output.indexOf("text"); 
             var partOutput = output.slice(pos+7,pos+2000);
             var pos2 = partOutput.indexOf("\"highlights\"");             
-            var answerOutput = partOutput.slice(0,pos2-2);  
-            console.log("Kenneth checks answerOutput");              
-            console.log(answerOutput);
-            
+            var answerOutput = partOutput.slice(0,pos2-2);            
             
             pos = output.indexOf("metadata_spo_item_name"); 
             partOutput = output.slice(pos+25,pos+2000);
@@ -77,13 +74,13 @@ export default function Results(props) {
             var propContent;
             
             for (let i = 0; i < 3; i++) {
-
+              console.log("i: " + i);                             
               console.log("Kenneth checks captions");               
               propResult = props.documents[i]; 
               propCaption = propResult.semanticSearch.captions[0].text;
               console.log(propCaption);                        
               console.log("Kenneth checks score");   
-              propScore = propResult.semanticSearch.rerankerScore                          
+              propScore = propResult.semanticSearch.rerankerScore.toFixed(2);                          
               console.log(propScore);    
               console.log("Kenneth checks filename");   
               propFilename = propResult.document.metadata_spo_item_name                       
@@ -92,14 +89,14 @@ export default function Results(props) {
               propContent = propResult.document.content.slice(0,1000)                       
               console.log(propContent);  
 
-/*
+
               var tempFilenameOutput;
               tempOutput = output; 
               pos = tempOutput.indexOf("metadata_spo_item_name"); 
               pos2 = tempOutput.indexOf("\"content\"");  
               console.log ("pos: " + pos + " pos2: " + pos2);
               tempFilenameOutput = tempOutput.slice(pos+25,pos2-2); 
-*/              
+              
 
               y = document.createElement("TR");
               y.setAttribute("id", "myTr");
