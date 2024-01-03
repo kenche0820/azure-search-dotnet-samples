@@ -8,8 +8,9 @@ export default function Results(props) {
               console.log(props);
 //            console.log(`result prop = ${JSON.stringif0y(props)}`);
 
-//            const result = props[0]; // or 1? whichever you need;
-//            console.log(semanticSearch.captions[0].text);
+              console.log("Kenneth checks captions");               
+              const propResult = props[0]; // or 1? whichever you need;
+              console.log(propResult.semanticSearch.captions[0].text);                        
 
 
             var output = JSON.stringify(props);                      
