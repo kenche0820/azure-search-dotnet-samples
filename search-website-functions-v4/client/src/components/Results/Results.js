@@ -4,25 +4,18 @@ import Result from './Result/Result';
 import "./Results.css";
 
 export default function Results(props) {
-              console.log("Kenneth checks props");               
-              console.log(props);
-//            console.log(`result prop = ${JSON.stringif0y(props)}`);
-
-              console.log("Kenneth checks captions");               
-              const propResult = props.documents[0]; 
-              console.log(propResult.semanticSearch.captions[0].text);                        
-              console.log("Kenneth checks score");                             
-              console.log(propResult.semanticSearch.rerankerScore);                        
-
-              
-
+/*
+            console.log("Kenneth checks props");               
+            console.log(props);
+            console.log(`result prop = ${JSON.stringif0y(props)}`);
             var output = JSON.stringify(props);                      
             var pos = output.indexOf("text"); 
             var partOutput = output.slice(pos+7,pos+2000);
             var pos2 = partOutput.indexOf("\"highlights\"");             
             var answerOutput = partOutput.slice(0,pos2-2);  
-//            console.log("Kenneth checks answerOutput");              
-//            console.log(answerOutput);
+            console.log("Kenneth checks answerOutput");              
+            console.log(answerOutput);
+*/            
             
             pos = output.indexOf("metadata_spo_item_name"); 
             partOutput = output.slice(pos+25,pos+2000);
@@ -74,9 +67,30 @@ export default function Results(props) {
             var y;
             var tempFilenameOutput;
             var tempOutput;
+            var propResult;
+            var propCaption;
+            var propScore;
+            var propFilename;
+            var propContent;
             tempOutput = output;
             
             for (let i = 0; i < 3; i++) {
+
+              console.log("Kenneth checks captions");               
+              propResult = props.documents[i]; 
+              propCaption = propResult.semanticSearch.captions[0].text;
+              console.log(propCaption);                        
+              console.log("Kenneth checks score");   
+              propScore = propResult.semanticSearch.rerankerScore                          
+              console.log(propScore);    
+              console.log("Kenneth checks filename");   
+              propFilename = propResult.document.metadata_spo_item_name                       
+              console.log(propFilename);  
+              console.log("Kenneth checks content");   
+              propContent = propResult.document.content                       
+              console.log(propContent);  
+
+
               pos = tempOutput.indexOf("metadata_spo_item_name"); 
               pos2 = tempOutput.indexOf("\"content\"");  
               console.log ("pos: " + pos + " pos2: " + pos2);
