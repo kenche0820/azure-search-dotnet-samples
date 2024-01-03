@@ -67,11 +67,12 @@ export default function Results(props) {
             
               tempLink = document.createElement('a');
               tempLink.textContent = propFilename;
-              tempLink.href = "https://setelab.sharepoint.com/Shared%20Documents/Forms/AllItems.aspx?id=%2FShared%20Documents%2Fdocument%2F" + propFilename + "&parent=%2FShared%20Documents%2Fdocument&p=true&ga=1";
-            //  document.getElementById('where_to_insert').appendChild(tempLink);
+              tempLink.href = "https://setelab.sharepoint.com/Shared%20Documents/Forms/AllItems.aspx?id=%2FShared%20Documents%2Fdocument%2F" + propFilename + "&parent=%2FShared%20Documents%2Fdocument&p=true&ga=1";              
               z = document.createElement("TD");
-              t = document.createTextNode(tempLink);              
-              z.appendChild(t);
+              z.setAttribute("id", "myTd");
+              document.getElementById("myTd").appendChild(tempLink);
+      //        t = document.createTextNode(tempLink);              
+      //        z.appendChild(t);
               y.appendChild(z);
               z = document.createElement("TD");
               t = document.createTextNode(propScore);              
