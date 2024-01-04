@@ -35,7 +35,7 @@ export default function Results(props) {
             var x = document.createElement("TABLE");
             x.setAttribute("id", "myTable");
             x.style.border = "1px solid #000";
-            var tagetTable = document.getElementById("myTable");
+            var targetTable = document.getElementById("myTable");
             targetTable.style.padding = "15px";                        
             document.body.appendChild(x);
             var header = x.createTHead();
@@ -53,6 +53,7 @@ export default function Results(props) {
             var y;
             var z;
             var t;  
+            var s;
             var propResult;
             var propCaption;
             var propScore;
@@ -85,10 +86,9 @@ export default function Results(props) {
       //        tempLink.textContent = propFilename;
       //        tempLink.href = "https://setelab.sharepoint.com/Shared%20Documents/Forms/AllItems.aspx?id=%2FShared%20Documents%2Fdocument%2F" + propFilename + "&parent=%2FShared%20Documents%2Fdocument&p=true&ga=1";              
               z = document.createElement("TD");
-      //        z.setAttribute("id", "myTd");
-      //        document.getElementById("myTd").appendChild(tempLink);
+      //        z.appendChild(tempLink);
               t = document.createTextNode(propFilename); 
-              t.innerHTML = "<A>" + propFilename + "</A>";    
+      //        t.innerHTML = "<A>" + propFilename + "</A>";    
               z.style.border = "1px solid #000";         
               z.appendChild(t);
               y.appendChild(z);
