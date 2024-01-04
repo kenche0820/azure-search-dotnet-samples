@@ -52,8 +52,7 @@ export default function Results(props) {
             cell2.style.border = "1px solid #000";
             var y;
             var z;
-            var t;  
-            var s;
+            var t;            
             var propResult;
             var propCaption;
             var propScore;
