@@ -35,13 +35,10 @@ export default function Results(props) {
             var x = document.createElement("TABLE");
             x.setAttribute("id", "myTable");
             x.style.border = "1px solid #000";
-//            var targetTable = document.getElementById("myTable");
-//            targetTable.style.padding = "15px";     
             x.style.padding = "10px 20px";                   
             document.body.appendChild(x);
             var header = x.createTHead();
-            var row = header.insertRow(0);
-            row.style.padding = "10px 20px";  
+            var row = header.insertRow(0);            
             row.style.border = "1px solid #000";    
             var cell0 = row.insertCell(0);
             cell0.innerHTML = "<b>File Name</b>";
@@ -60,7 +57,7 @@ export default function Results(props) {
             var propScore;
             var propFilename;
             var propContent;
-     //       var tempLink;
+            var tempLink;
             
             for (let i = 0; i < propCount; i++) {
               console.log("i: " + i);                             
@@ -83,11 +80,11 @@ export default function Results(props) {
               y.style.borderStyle = "solid";
               document.getElementById("myTable").appendChild(y);
             
-      //        tempLink = document.createElement('a');
-      //        tempLink.textContent = propFilename;
-      //        tempLink.href = "https://setelab.sharepoint.com/Shared%20Documents/Forms/AllItems.aspx?id=%2FShared%20Documents%2Fdocument%2F" + propFilename + "&parent=%2FShared%20Documents%2Fdocument&p=true&ga=1";              
+              tempLink = document.createElement('a');
+              tempLink.textContent = propFilename;
+              tempLink.href = "https://setelab.sharepoint.com/Shared%20Documents/Forms/AllItems.aspx?id=%2FShared%20Documents%2Fdocument%2F" + propFilename + "&parent=%2FShared%20Documents%2Fdocument&p=true&ga=1";              
               z = document.createElement("TD");
-      //        z.appendChild(tempLink);
+              z.appendChild(tempLink);
               t = document.createTextNode(propFilename); 
       //        t.innerHTML = "<A>" + propFilename + "</A>";    
               z.style.border = "1px solid #000";         
