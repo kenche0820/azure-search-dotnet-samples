@@ -35,8 +35,9 @@ export default function Results(props) {
             var x = document.createElement("TABLE");
             x.setAttribute("id", "myTable");
             x.style.border = "1px solid #000";
-            var targetTable = document.getElementById("myTable");
-            targetTable.style.padding = "15px";                        
+//            var targetTable = document.getElementById("myTable");
+//            targetTable.style.padding = "15px";     
+            x.style.padding = "10px 20px";                   
             document.body.appendChild(x);
             var header = x.createTHead();
             var row = header.insertRow(0);
