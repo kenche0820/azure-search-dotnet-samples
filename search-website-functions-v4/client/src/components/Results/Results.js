@@ -38,7 +38,8 @@ export default function Results(props) {
             x.style.padding = "20px 10px";
             document.body.appendChild(x);
             var header = x.createTHead();
-            var row = header.insertRow(0);    
+            var row = header.insertRow(0);
+            row.style.borderStyle = "solid";    
             var cell0 = row.insertCell(0);
             cell0.innerHTML = "<b>File Name</b>";
             var cell1 = row.insertCell(1);
@@ -73,6 +74,7 @@ export default function Results(props) {
 
               y = document.createElement("TR");
               y.setAttribute("id", "myTr");
+              y.style.borderStyle = "solid";
               document.getElementById("myTable").appendChild(y);
             
       //        tempLink = document.createElement('a');
