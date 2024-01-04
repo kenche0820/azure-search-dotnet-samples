@@ -34,21 +34,21 @@ export default function Results(props) {
 
             var x = document.createElement("TABLE");
             x.setAttribute("id", "myTable");
-            x.style.borderStyle = "solid";
-            x.style.padding = "40px 20px";
+            x.style.border = "1px solid #000";
+            x.style.padding = "15";
             document.body.appendChild(x);
             var header = x.createTHead();
             var row = header.insertRow(0);
-            row.style.borderStyle = "solid";    
+            row.style.border = "1px solid #000";    
             var cell0 = row.insertCell(0);
             cell0.innerHTML = "<b>File Name</b>";
-            cell0.style.borderStyle = "solid"; 
+            cell0.style.border = "1px solid #000"; 
             var cell1 = row.insertCell(1);
             cell1.innerHTML = "<b>Score</b>";
-            cell1.style.borderStyle = "solid";
+            cell1.style.border = "1px solid #000";
             var cell2 = row.insertCell(2);
             cell2.innerHTML = "<b>Contents</b>";
-            cell2.style.borderStyle = "solid";
+            cell2.style.border = "1px solid #000";
             var y;
             var z;
             var t;  
@@ -87,17 +87,17 @@ export default function Results(props) {
       //        z.setAttribute("id", "myTd");
       //        document.getElementById("myTd").appendChild(tempLink);
               t = document.createTextNode(propFilename);     
-              z.style.borderStyle = "solid";         
+              z.style.border = "1px solid #000";         
               z.appendChild(t);
               y.appendChild(z);
               z = document.createElement("TD");
-              z.style.borderStyle = "solid";
+              z.style.border = "1px solid #000";
               t = document.createTextNode(propScore);              
               z.appendChild(t);
               y.appendChild(z);
               z = document.createElement("TD");
               t = document.createTextNode(propContent); 
-              z.style.borderStyle = "solid";             
+              z.style.border = "1px solid #000";            
               z.appendChild(t);
               y.appendChild(z);
             }
