@@ -35,7 +35,7 @@ export default function Results(props) {
             var x = document.createElement("TABLE");
             x.setAttribute("id", "myTable");
             x.style.border = "1px solid #000";
-            x.style.padding = "15";
+            x.style.padding = "15px";
             document.body.appendChild(x);
             var header = x.createTHead();
             var row = header.insertRow(0);
@@ -72,7 +72,7 @@ export default function Results(props) {
               propFilename = propResult.document.metadata_spo_item_name                       
               console.log(propFilename);  
               console.log("Kenneth checks content");   
-              propContent = propResult.document.content.slice(0,1000)                       
+              propContent = propResult.document.content.slice(0,1000) + "...";                    
               console.log(propContent);             
 
               y = document.createElement("TR");
@@ -86,7 +86,8 @@ export default function Results(props) {
               z = document.createElement("TD");
       //        z.setAttribute("id", "myTd");
       //        document.getElementById("myTd").appendChild(tempLink);
-              t = document.createTextNode(propFilename);     
+              t = document.createTextNode(propFilename); 
+              t.innerHTML = "<A>" + propFilename + "</A>";    
               z.style.border = "1px solid #000";         
               z.appendChild(t);
               y.appendChild(z);
