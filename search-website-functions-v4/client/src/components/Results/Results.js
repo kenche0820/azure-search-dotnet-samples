@@ -41,6 +41,7 @@ export default function Results(props) {
             document.body.appendChild(x);
             var header = x.createTHead();
             var row = header.insertRow(0);
+            row.style.padding = "10px 20px";  
             row.style.border = "1px solid #000";    
             var cell0 = row.insertCell(0);
             cell0.innerHTML = "<b>File Name</b>";
