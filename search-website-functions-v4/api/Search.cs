@@ -21,9 +21,9 @@ namespace WebSearch.Function
     
     public class Search
     {
-     //   private static string searchApiKey = Environment.GetEnvironmentVariable("SearchApiKey", EnvironmentVariableTarget.Process);
-     //   private static string searchServiceName = Environment.GetEnvironmentVariable("SearchServiceName", EnvironmentVariableTarget.Process);
-     //   private static string searchIndexName = Environment.GetEnvironmentVariable("SearchIndexName", EnvironmentVariableTarget.Process) ?? "sharepoint-index";
+        private static string searchApiKey = Environment.GetEnvironmentVariable("SearchApiKey", EnvironmentVariableTarget.Process);
+        private static string searchServiceName = Environment.GetEnvironmentVariable("SearchServiceName", EnvironmentVariableTarget.Process);
+        private static string searchIndexName = Environment.GetEnvironmentVariable("SearchIndexName", EnvironmentVariableTarget.Process) ?? "sharepoint-index";
 
         private readonly ILogger<Lookup> _logger;
 
@@ -40,9 +40,9 @@ namespace WebSearch.Function
             string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
             var data = JsonSerializer.Deserialize<RequestBodySearch>(requestBody);
 
-            string searchServiceName = "ken-cog-search-svc";
-            string searchApiKey = "y4IvahCJXDTC3hvDjjlrZZjWsmwmiXrW2iJqv5MgKHAzSeBvYjbF";
-            string searchIndexName = "sharepoint-index";
+//            string searchServiceName = "ken-cog-search-svc";
+//            string searchApiKey = "y4IvahCJXDTC3hvDjjlrZZjWsmwmiXrW2iJqv5MgKHAzSeBvYjbF";
+//            string searchIndexName = "sharepoint-index";
 
             // Azure AI Search             
             Uri serviceEndpoint = new Uri($"https://{searchServiceName}.search.windows.net/");
