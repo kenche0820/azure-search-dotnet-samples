@@ -11,7 +11,26 @@ export default function Results(props) {
             var propCount;
             propCount = props.documents.length;             
             console.log(propCount);            
-//            console.log(`result prop = ${JSON.stringify(props)}`);        
+//            console.log(`result prop = ${JSON.stringif0y(props)}`);
+
+            var output = JSON.stringify(props);                      
+            var pos = output.indexOf("text"); 
+            var partOutput = output.slice(pos+7,pos+2000);
+            var pos2 = partOutput.indexOf("\"highlights\"");             
+            var answerOutput = partOutput.slice(0,pos2-2);            
+            
+            pos = output.indexOf("metadata_spo_item_name"); 
+            partOutput = output.slice(pos+25,pos+2000);
+            pos2 = partOutput.indexOf("\"content\"");             
+            var filenameOutput = partOutput.slice(0,pos2-2); 
+//            console.log("Kenneth checks filenameOutput");              
+//            console.log(filenameOutput);   
+            var fileLink = "https://setelab.sharepoint.com/Shared%20Documents/Forms/AllItems.aspx?id=%2FShared%20Documents%2Fdocument%2F";
+            var tempFilename = filenameOutput.replace(/_/g, "%5F");
+            fileLink += tempFilename.replace(/\./g, "%2E");
+            fileLink += "&parent=%2FShared%20Documents%2Fdocument&p=true&ga=1";
+//            console.log("Kenneth checks fileLink");              
+//            console.log(fileLink);          
 
             var x = document.createElement("TABLE");
             x.setAttribute("id", "myTable");
@@ -65,7 +84,8 @@ export default function Results(props) {
               tempLink.textContent = propFilename;
               tempLink.href = "https://setelab.sharepoint.com/Shared%20Documents/Forms/AllItems.aspx?id=%2FShared%20Documents%2Fdocument%2F" + propFilename + "&parent=%2FShared%20Documents%2Fdocument&p=true&ga=1";              
               z = document.createElement("TD");
-              z.appendChild(tempLink); 
+              z.appendChild(tempLink);
+ 
               z.style.border = "1px solid #000";         
               y.appendChild(z);
               z = document.createElement("TD");
