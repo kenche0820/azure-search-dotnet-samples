@@ -53,7 +53,7 @@ export default function Results(props) {
             var z;
             var t;            
             var propResult;
-            var propCaption;
+//            var propCaption;
             var propScore;
             var propFilename;
             var propContent;
