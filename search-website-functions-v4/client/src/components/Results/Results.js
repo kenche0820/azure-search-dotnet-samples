@@ -5,12 +5,12 @@ import "./Results.css";
 
 export default function Results(props) {
 
-            console.log("Kenneth checks props");               
-            console.log(props);
-            console.log("Kenneth checks count");  
+//            console.log("Kenneth checks props");               
+//            console.log(props);
             var propCount;
             propCount = props.documents.length;             
-            console.log(propCount);            
+//            console.log("Kenneth checks count");  
+//            console.log(propCount);            
 //            console.log(`result prop = ${JSON.stringif0y(props)}`);
 
             var output = JSON.stringify(props);                      
@@ -60,18 +60,18 @@ export default function Results(props) {
             var tempLink;
             
             for (let i = 0; i < propCount; i++) {
-              console.log("i: " + i);                             
-              console.log("Kenneth checks captions");               
+//              console.log("i: " + i);                             
+//              console.log("Kenneth checks captions");               
               propResult = props.documents[i]; 
               propCaption = propResult.semanticSearch.captions[0].text;
-              console.log(propCaption);                        
-              console.log("Kenneth checks score");   
+//              console.log(propCaption);                        
+//              console.log("Kenneth checks score");   
               propScore = propResult.semanticSearch.rerankerScore.toFixed(2);                          
-              console.log(propScore);    
-              console.log("Kenneth checks filename");   
+//              console.log(propScore);    
+//              console.log("Kenneth checks filename");   
               propFilename = propResult.document.metadata_spo_item_name                       
-              console.log(propFilename);  
-              console.log("Kenneth checks content");   
+//              console.log(propFilename);  
+//              console.log("Kenneth checks content");   
               propContent = propResult.document.content.slice(0,1000) + "...";                    
               console.log(propContent);             
 
