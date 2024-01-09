@@ -101,7 +101,7 @@ export default function Results(props) {
               y.appendChild(z);
             }
               
-  
+/*  
   let results = props.documents.map((result, index) => {
     return <Result 
         key={index} 
@@ -111,6 +111,7 @@ export default function Results(props) {
   
  // DO NOT COMMENT OUT - get error for unused var 
  console.log(results);
+*/
 
 //  let beginDocNumber = Math.min(props.skip + 1, props.count);
 //  let endDocNumber = Math.min(props.skip + props.top, props.count);
