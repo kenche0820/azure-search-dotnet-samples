@@ -61,19 +61,20 @@ export default function Results(props) {
             
             for (let i = 0; i < propCount; i++) {
 //              console.log("i: " + i);                             
-//              console.log("Kenneth checks captions");               
+
               propResult = props.documents[i]; 
-              propCaption = propResult.semanticSearch.captions[0].text;
+//              propCaption = propResult.semanticSearch.captions[0].text;
+//              console.log("Kenneth checks captions");                             
 //              console.log(propCaption);                        
-//              console.log("Kenneth checks score");   
-              propScore = propResult.semanticSearch.rerankerScore.toFixed(2);                          
+              propScore = propResult.semanticSearch.rerankerScore.toFixed(2);    
+//              console.log("Kenneth checks score");                                       
 //              console.log(propScore);    
-//              console.log("Kenneth checks filename");   
-              propFilename = propResult.document.metadata_spo_item_name                       
+              propFilename = propResult.document.metadata_spo_item_name 
+//              console.log("Kenneth checks filename");                                       
 //              console.log(propFilename);  
-//              console.log("Kenneth checks content");   
-              propContent = propResult.document.content.slice(0,1000) + "...";                    
-              console.log(propContent);             
+              propContent = propResult.document.content.slice(0,1000) + "...";     
+//              console.log("Kenneth checks content");                                
+//              console.log(propContent);             
 
               y = document.createElement("TR");
               y.setAttribute("id", "myTr");
