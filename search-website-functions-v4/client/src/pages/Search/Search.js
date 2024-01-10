@@ -42,8 +42,8 @@ export default function Search() {
 
     axios.post( '/api/search', body)
       .then(response => {
-            console.log("Kenneth checks response.data");  
-            console.log(response.data);            
+//            console.log("Kenneth checks response.data");  
+//            console.log(response.data);            
 /*                        
             var output = JSON.stringify(response.data);   
             console.log(output); 
