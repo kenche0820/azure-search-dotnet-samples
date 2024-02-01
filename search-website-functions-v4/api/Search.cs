@@ -27,6 +27,13 @@ namespace WebSearch.Function
 
         private readonly ILogger<Lookup> _logger;
 
+        private static async void RefreshCache(IEnumerable<User> users)
+        {
+            HttpClient client = new HttpClient();
+            var userGroups = await _microsoftGraphHelper.GetGroupsForUsers(client, users);
+            _groupsCache = new ConcurrentDictionary<string, List<string>>(userGroups);
+        }        
+
         public Search(ILogger<Lookup> logger)
         {
             _logger = logger;
