@@ -14,6 +14,8 @@ using System.Text.Json.Serialization;
 using WebSearch.Models;
 using SearchFilter = WebSearch.Models.SearchFilter;
 
+using Microsoft.Graph;
+using Microsoft.Identity.Client;
 
 namespace WebSearch.Function
 {
@@ -182,5 +184,31 @@ namespace WebSearch.Function
 
             return string.Join(" and ", filterExpressions);
         }
+
+        
+
+        public static async Task&lt;IActionResult&gt; Run(HttpRequest req, ILogger log)
+        {
+            string fileId = req.Query["fileId"];
+
+            IConfidentialClientApplication confidentialClientApplication = ConfidentialClientApplicationBuilder
+                .Create("&lt;client-id&gt;")
+                .WithTenantId("&lt;tenant-id&gt;")
+                .WithClientSecret("&lt;client-secret&gt;")
+                .Build();
+
+            ClientCredentialProvider authProvider = new ClientCredentialProvider(confidentialClientApplication);
+
+            GraphServiceClient graphClient = new GraphServiceClient(authProvider);
+
+            var permissions = await graphClient.Drives["&lt;drive-id&gt;"].Items[fileId].Permissions
+                .Request()
+                .GetAsync();
+
+            // TODO: <span class=" active-doc-0" data-doc-items="0">Update the search index with the file permissions<a href="#doc-pos=0" data-tag-index="1"></a></span>.
+
+            return new OkObjectResult(permissions);
+        }
+   
     }
 }
